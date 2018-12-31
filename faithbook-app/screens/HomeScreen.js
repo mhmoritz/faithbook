@@ -18,19 +18,11 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    let image = {uri: 'https://source.unsplash.com/1600x900/?friendship'};
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-          </View>
+          <Image source={image} style = {{height: 200, resizeMode : 'stretch', margin: 5 }} />
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
@@ -101,11 +93,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 10,
+    height: 10,
     resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
+    marginTop: 10,
+    marginLeft: -20,
   },
   getStartedContainer: {
     alignItems: 'center',
