@@ -1,19 +1,25 @@
 .Post {
   position: relative;
-  width: 50%;
+  width: 40%;
   margin-top: 1%;
+}
+
+.Card {
+  position: relative;
 }
 
 .Image {
   width: 100%;
+  display: block;
 }
 
 .Overlay {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 99%;
+  height: 100%;
   background-color: rgba(0,0,0,0.65);
+  overflow: hidden;
 }
 
 .Overlay-Text {
@@ -25,4 +31,19 @@
   color: white;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+}
+
+.Overlay-Source {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  font-size: 0.7vw;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.Panel {
+  padding-bottom: 1%;
 }

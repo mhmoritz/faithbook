@@ -7,7 +7,7 @@ class Feed extends Component {
     let arr = [];
 
     for(var i=0; i<N; i++) {
-      arr.push(<Post/>)
+      arr.push(<Post key={i}/>)
     }
     return arr;
   }
