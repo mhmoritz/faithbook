@@ -1,0 +1,16 @@
+.NavigationBar {
+  width: 100%;
+}
+
+.Subbar {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.SidebarElements {
+  margin-top: 30%;
+}
+
+.Bottom {
+  bottom: 8%;
+}
