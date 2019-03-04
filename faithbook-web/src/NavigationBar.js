@@ -8,14 +8,6 @@ class NavigationBar extends Component {
     categories: [],
   }
 
-  componentDidMount() {
-    axios.get("http://127.0.0.1:5000/categories")
-      .then(response => {
-        this.setState({categories: response.data});
-        console.log(response.data);
-    });
-  }
-
   render() {
     return (
         <Navbar className="black-text white">
