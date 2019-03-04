@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './NavigationBar.css'
 import {Navbar, NavItem, Icon, SideNav, SideNavItem} from 'react-materialize';
 
 class NavigationBar extends Component {
+  state = {
+    categories: [],
+  }
+
+  componentDidMount() {
+    axios.get("http://127.0.0.1:5000/categories")
+      .then(response => {
+        this.setState({categories: response.data});
+        console.log(response.data);
+    });
+  }
+
   render() {
     return (
         <Navbar className="black-text white">

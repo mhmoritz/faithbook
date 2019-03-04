@@ -1,6 +1,8 @@
 .Post {
   position: relative;
-  width: 40%;
+  min-width: 600px;
+  width: 60%;
+  max-width: 1400px;
   margin-top: 1%;
 }
 
@@ -27,7 +29,7 @@
   position: relative;
   top: 50%;
   left: 50%;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   color: white;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
@@ -38,7 +40,7 @@
   position: absolute;
   left: 50%;
   bottom: 0;
-  font-size: 0.7vw;
+  font-size: 0.9vw;
   color: white;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);

@@ -8,10 +8,10 @@ class Post extends Component {
       <Collection className="Post">
         <div className="Card">
           <img className="Image"
-            src={"https://source.unsplash.com/1900x1080/?paint"}/>
+            src={this.props.image}/>
           <div className="Overlay">
-            <div className="Overlay-Text">Overlay Text</div>
-            <div className="Overlay-Source">Source</div>
+            <div className="Overlay-Text">{this.props.text}</div>
+            <div className="Overlay-Source">{this.props.source}</div>
           </div>
         </div>
         <CollectionItem>
