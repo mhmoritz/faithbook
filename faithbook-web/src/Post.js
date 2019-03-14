@@ -17,7 +17,7 @@ class Post extends Component {
         <CollectionItem>
           <div className="Panel black-text left">Photo by</div>
           <a
-            className="Panel black-text left"
+            className="Profile-name left"
             href={this.props.link}
             target="_blank"
             rel="noopener noreferrer"

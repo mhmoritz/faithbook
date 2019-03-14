@@ -23,6 +23,11 @@
 
 }
 
+.Profile-name {
+  font-weight: bold;
+  color: black;
+}
+
 .Overlay {
   position: absolute;
   top: 0;
