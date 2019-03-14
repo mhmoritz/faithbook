@@ -15,14 +15,16 @@ class Post extends Component {
           </div>
         </div>
         <CollectionItem>
-          <div className="Panel black-text left">Photo by</div>
+          <div className="Panel black-text left">Photo by
+          &nbsp;
+          </div>
           <a
             className="Profile-name left"
             href={this.props.link}
             target="_blank"
             rel="noopener noreferrer"
             >
-            &nbsp;
+
             {this.props.author}
           </a>
           <img className="Profile"
