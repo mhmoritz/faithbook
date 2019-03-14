@@ -15,6 +15,14 @@
   display: block;
 }
 
+.Profile {
+  width: 30px;
+  margin-left: 10px;
+  margin-border: 2px;
+  display:run-in;
+
+}
+
 .Overlay {
   position: absolute;
   top: 0;
