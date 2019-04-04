@@ -3,7 +3,8 @@
 }
 
 .Subbar {
-  width: 55%;
+  width: 95%;
+  max-width: 1280;
   margin: 0 auto;
 }
 
