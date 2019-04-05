@@ -13,5 +13,12 @@ def feed():
     category = request.args.get('category')
     return jsonify(get_feed(category))
 
+@app.route("/allCategories")
+def categories():
+    return jsonify(_get_list_of_all_categories())
+
 def get_feed(category):
     return database.FEEDS[category]
+
+def _get_list_of_all_categories():
+    return database.CATEGORIES
