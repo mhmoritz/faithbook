@@ -8,7 +8,17 @@ class NavigationBar extends Component {
     categories: [],
   }
 
+  componentDidMount() {
+    axios.get("http://127.0.0.1:5000/allCategories")
+      .then(response => {
+        this.setState({categories: response.data});
+    });
+  }
+
   render() {
+    const items = this.state.categories.map(category => {
+      return (<SideNavItem>{category}</SideNavItem>)
+    });
     return (
         <Navbar className="black-text white">
           <div className="Subbar">
@@ -24,16 +34,7 @@ class NavigationBar extends Component {
               >
               <SideNavItem className="SidebarElements">Categories</SideNavItem>
               <SideNavItem divider />
-              <SideNavItem>Friends</SideNavItem>
-              <SideNavItem>Love</SideNavItem>
-              <SideNavItem>Talent</SideNavItem>
-              <SideNavItem>Identity</SideNavItem>
-              <SideNavItem>Study & Work</SideNavItem>
-              <SideNavItem>Men</SideNavItem>
-              <SideNavItem>Women</SideNavItem>
-              <SideNavItem>Challenges</SideNavItem>
-              <SideNavItem>Family</SideNavItem>
-              <SideNavItem>Faith</SideNavItem>
+              {items}
             </SideNav>
             <NavItem className="right" href="#!">
               <Icon className="black-text">language</Icon>
