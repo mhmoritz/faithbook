@@ -15,3 +15,10 @@
 .Bottom {
   bottom: 8%;
 }
+
+.Sidelink {
+  width: 100%;
+  left: 0;
+  color: #000000;
+  padding: -10%;
+}

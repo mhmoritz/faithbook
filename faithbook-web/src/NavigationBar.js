@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './NavigationBar.css'
 import {Navbar, NavItem, Icon, SideNav, SideNavItem} from 'react-materialize';
@@ -17,7 +18,13 @@ class NavigationBar extends Component {
 
   render() {
     const items = this.state.categories.map(category => {
-      return (<SideNavItem>{category}</SideNavItem>)
+      return (
+        <SideNavItem>
+          <Link to={`/${category.key}`} className="Sidelink">
+            {category.displayName}
+          </Link>
+        </SideNavItem>
+      )
     });
     return (
         <Navbar className="black-text white">
@@ -31,7 +38,7 @@ class NavigationBar extends Component {
                 </div>
               }
               options={{closeOnClick: true}}
-              >
+            >
               <SideNavItem className="SidebarElements">Categories</SideNavItem>
               <SideNavItem divider />
               {items}
