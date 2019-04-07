@@ -21,4 +21,6 @@ def get_feed(category):
     return database.FEEDS[category]
 
 def _get_list_of_all_categories():
-    return database.CATEGORIES
+    return list(
+        {'key': key, 'displayName': entry['displayName']} for key, entry in database.CATEGORIES.items()
+    )
