@@ -15,18 +15,23 @@
   display: block;
 }
 
-.Profile {
+.Profile-img {
+  border-radius: 30px;
   width: 30px;
-  margin-left: 10px;
-  margin-border: 2px;
-  display:run-in;
+  height: 30px;
+  object-fit: cover;
+  display: inline-block;
+  vertical-align: middle;
+
 
 }
 
 .Profile-name {
-  font-weight: bold;
   text-decoration: underline;
-  color: black;
+  font-weight: bold;
+  font-style: italic;
+  color: DimGrey;
+  vertical-align: middle;
 }
 
 .Overlay {
@@ -62,4 +67,9 @@
 
 .Panel {
   padding-bottom: 1%;
+}
+.Panel-text{
+  margin-left: 10px;
+  vertical-align: middle;
+  font-style: italic;
 }
