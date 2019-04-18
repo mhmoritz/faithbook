@@ -8,7 +8,8 @@ class Post extends Component {
       <Collection className="Post">
         <div className="Card">
           <img className="Image"
-            src={this.props.image}/>
+            src={this.props.image}
+            alt=""/>
           <div className="Overlay">
             <div className="Overlay-Text">{this.props.text}</div>
             <div className="Overlay-Source">{this.props.source}</div>
@@ -28,7 +29,8 @@ class Post extends Component {
             {this.props.author}
           </a>
           <img className="Profile"
-            src={this.props.profile}/>
+            src={this.props.profile}
+            alt=""/>
           <Icon className="Panel black-text right">bookmark_border</Icon>
           <Icon className="Panel black-text right">favorite_border</Icon>
         </CollectionItem>
