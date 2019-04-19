@@ -33,9 +33,7 @@ class Post extends Component {
             {this.props.author}
           </a>
         </span>
-
-          <Icon className="Panel black-text right">bookmark_border</Icon>
-          <Icon className="Panel black-text right">favorite_border</Icon>
+        
         </CollectionItem>
       </Collection>
     );
