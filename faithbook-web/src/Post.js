@@ -8,15 +8,30 @@ class Post extends Component {
       <Collection className="Post">
         <div className="Card">
           <img className="Image"
-            src={this.props.image}/>
+            src={this.props.image}
+            alt=""
+          />
           <div className="Overlay">
             <div className="Overlay-Text">{this.props.text}</div>
             <div className="Overlay-Source">{this.props.source}</div>
           </div>
         </div>
         <CollectionItem>
-          <Icon className="Panel black-text right">bookmark_border</Icon>
-          <Icon className="Panel black-text right">favorite_border</Icon>
+          <img className="Profile-img"
+            src={this.props.profile}
+            alt=""
+          />
+          <span className="Panel-text">
+            Photo by &nbsp;
+            <a
+              className="Profile-name"
+              href={this.props.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {this.props.author}
+            </a>
+          </span>
         </CollectionItem>
       </Collection>
     );
