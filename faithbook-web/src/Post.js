@@ -21,18 +21,17 @@ class Post extends Component {
             src={this.props.profile}
             alt=""
           />
-          <span
-            className="Panel-text">Photo by &nbsp;
+          <span className="Panel-text">
+            Photo by &nbsp;
             <a
               className="Profile-name"
               href={this.props.link}
               target="_blank"
               rel="noopener noreferrer"
-            >
-            {this.props.author}
+              >
+              {this.props.author}
             </a>
           </span>
-
         </CollectionItem>
       </Collection>
     );
