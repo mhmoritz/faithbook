@@ -1,9 +1,56 @@
 {
-  "friendship": [
+  "friends": [
     {
       "id": 0,
       "post_text": "Do to others as you would have them do to you.",
       "post_source": "Luke 6, 31",
+      "image_url": "https://images.unsplash.com/photo-1530047139082-5435ca3c4614?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ",
+      "author_name": "Omar Lopez",
+      "author_hotlink": "https://unsplash.com/@omarlopez1",
+      "author_image_url": "https://images.unsplash.com/profile-1503510471395-10345d6130f2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64"
+    },
+    {
+      "id": 1,
+      "post_text": "Do not be misled: Bad company corrupts good character.",
+      "post_source": "1. Corinthians 15, 33",
+      "image_url": "https://images.unsplash.com/photo-1446160657592-4782fb76fb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ",
+      "author_name": "Ian Schneider",
+      "author_hotlink": "https://unsplash.com/@goian",
+      "author_image_url": "https://images.unsplash.com/photo-1526623025148-51c288af595d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ"
+    },
+    {
+      "id": 2,
+      "post_text": "Bear with each other and forgive one another if any of you has a grievance against someone. Forgive as the Lord forgave you.",
+      "post_source": "Colossians 3, 13",
+      "image_url": "https://images.unsplash.com/photo-1531816416667-36b0e8a9bc63?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ",
+      "author_name": "rawpixel",
+      "author_hotlink": "https://unsplash.com/@rawpixel",
+      "author_image_url": "https://images.unsplash.com/photo-1502802619459-7448b7c07b52?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ"
+    },
+    {
+      "id": 3,
+      "post_text": "A friend loves at all times, and a brother is born for a time of adversity.",
+      "post_source": "Proverbs 17, 17",
+      "image_url": "https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ",
+      "author_name": "Helena Lopes",
+      "author_hotlink": "https://unsplash.com/@wildlittlethingsphoto",
+      "author_image_url": "https://images.unsplash.com/profile-1511590766996-5ef87789bdda?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64"
+    },
+    {
+      "id": 4,
+      "post_text": "A man of too many friends comes to ruin, but there is a friend who sticks closer than a brother.",
+      "post_source": "Proverbs 18, 24",
+      "image_url": "https://images.unsplash.com/photo-1536746393907-551c8b89efaa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ",
+      "author_name": "rawpixel",
+      "author_hotlink": "https://unsplash.com/@rawpixel",
+      "author_image_url": "https://images.unsplash.com/photo-1502802619459-7448b7c07b52?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ"
+    }
+  ],
+  "love": [
+    {
+      "id": 0,
+      "post_text": "Do everything in love.",
+      "post_source": "1. Corinthians 16, 14",
       "image_url": "https://images.unsplash.com/photo-1530047139082-5435ca3c4614?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjUzODIzfQ",
       "author_name": "Omar Lopez",
       "author_hotlink": "https://unsplash.com/@omarlopez1",

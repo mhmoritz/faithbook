@@ -4,15 +4,28 @@ import './Feed.css'
 import Post from './Post';
 
 class Feed extends Component {
-  state = {
-    posts: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+    }
   }
 
-  componentDidMount() {
-    axios.get("http://127.0.0.1:5000/feed?category=friendship")
+  fetchFeedFromServer = (category, language) => {
+    axios.get(`http://127.0.0.1:5000/feed?category=${category}&language=${language}`)
       .then(response => {
         this.setState({posts: response.data});
     });
+  }
+
+  componentWillMount = () => {
+    let { category } = this.props.match.params;
+    this.fetchFeedFromServer(category, "ENG")
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let { category } = nextProps.match.params;
+    this.fetchFeedFromServer(category, "ENG")
   }
 
   render() {
