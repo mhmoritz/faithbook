@@ -9,7 +9,8 @@ class Post extends Component {
         <div className="Card">
           <img className="Image"
             src={this.props.image}
-            alt=""/>
+            alt=""
+          />
           <div className="Overlay">
             <div className="Overlay-Text">{this.props.text}</div>
             <div className="Overlay-Source">{this.props.source}</div>
