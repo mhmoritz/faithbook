@@ -22,8 +22,7 @@ class Post extends Component {
             alt=""
           />
           <span
-            className="Panel-text">Photo by
-            &nbsp;
+            className="Panel-text">Photo by &nbsp;
             <a
               className="Profile-name"
               href={this.props.link}
