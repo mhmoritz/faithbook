@@ -28,7 +28,7 @@ class Post extends Component {
               href={this.props.link}
               target="_blank"
               rel="noopener noreferrer"
-              >
+            >
               {this.props.author}
             </a>
           </span>
