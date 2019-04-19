@@ -16,6 +16,9 @@ class Feed extends Component {
   }
 
   render() {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    console.log(w,h); 
     const posts = this.state.posts.map(post => {
       return <Post text={post.post_text} source={post.post_source} image={post.image_url}/>
     });
