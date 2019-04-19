@@ -7,7 +7,7 @@ class Post extends Component {
   render() {
     return (
         <Collection className="Post">
-          <LazyLoad offset={150}>
+          <LazyLoad height={500} offset={150}>
             <div>
               <div className="Card">
                 <img className="Image"
