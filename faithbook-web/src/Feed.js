@@ -30,7 +30,7 @@ class Feed extends Component {
 
   render() {
     const posts = this.state.posts.map(post => {
-      return <Post text={post.post_text} source={post.post_source} image={post.image_url}/>
+      return <Post text={post.post_text} source={post.post_source} image={post.image_url} author={post.author_name} profile={post.author_image_url} link={post.author_hotlink}/>
     });
 
     return (
