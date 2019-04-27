@@ -18,11 +18,12 @@ const styles = {
   sideListDynamicElement: {
     marginLeft: 25,
   },
-  listItemTextStatic: {
+  listItemText: {
     fontWeight: 500,
+    fontSize: 15,
   },
-  listItemTextDynamic: {
-    fontWeight: 500,
+  link: {
+    textDecoration: 'none',
   },
 };
 
@@ -45,15 +46,15 @@ class SideBar extends Component {
     const { classes } = this.props;
     const items = this.state.categories.map(category => {
       return (
-        <ListItem button>
-          <Link to={`/${category.key}`}>
+        <Link to={`/${category.key}`} className={classes.link}>
+          <ListItem button>
             <ListItemText
-              classes={{primary:classes.listItemTextDynamic}}
+              classes={{primary:classes.listItemText}}
               className={classes.sideListDynamicElement}
               primary={category.displayName}
             />
-          </Link>
-        </ListItem>
+          </ListItem>
+        </Link>
       )
     });
     return (
@@ -61,7 +62,7 @@ class SideBar extends Component {
         <List className={classes.sideList} onClick={this.props.closeSideBar}>
           <ListItem>
             <ListItemText
-              classes={{primary:classes.listItemTextStatic}}
+              classes={{primary:classes.listItemText}}
               primary={"Categories"}
             />
           </ListItem>
