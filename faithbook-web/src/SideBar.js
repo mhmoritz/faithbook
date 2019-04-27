@@ -23,7 +23,7 @@ const styles = {
   },
   listItemTextDynamic: {
     fontWeight: 500,
-  }
+  },
 };
 
 class SideBar extends Component {

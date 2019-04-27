@@ -10,6 +10,9 @@ import ImportContacts from '@material-ui/icons/ImportContacts';
 import GTranslate from '@material-ui/icons/GTranslate';
 
 const styles = {
+  mainBar:{
+    backgroundColor: '#ffffff'
+  },
   grow: {
     flexGrow: 1,
   },
@@ -17,27 +20,36 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  button: {
+    color: '#000000',
+  },
+  inputFocused: {
+    background: "$labelcolor",
+    marginRight: 100,
+  }
 };
 
 class NavigationBar extends Component {
   render() {
     const { classes } = this.props;
     return (
-        <AppBar className="black-text white">
+        <AppBar className={classes.mainBar}>
           <Toolbar>
             <IconButton
-              color="inherit"
+              color="default"
               aria-label="Menu"
-              className={classes.menuButton}
+              className={classes.menuButton, classes.button}
               onClick={this.props.openSideBar}
             >
               <MenuIcon />
             </IconButton>
             <div className={classes.grow} />
-            <IconButton color="inherit">
+            <div>
+            <IconButton disableRipple={true} className={classes.button}>
               <GTranslate />
             </IconButton>
-            <IconButton color="inherit">
+            </div>
+            <IconButton disableRipple={true} className={classes.button}>
               <ImportContacts />
             </IconButton>
           </Toolbar>
