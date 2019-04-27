@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { closeSideBar } from './actions';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
@@ -17,7 +19,7 @@ const styles = {
     marginLeft: 25,
   },
   listItemTextStatic: {
-    fontWeight: 600,
+    fontWeight: 500,
   },
   listItemTextDynamic: {
     fontWeight: 500,
@@ -26,11 +28,10 @@ const styles = {
 
 class SideBar extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       categories: [],
     };
-    this.open = true;
   }
 
   componentDidMount() {
@@ -56,8 +57,8 @@ class SideBar extends Component {
       )
     });
     return (
-      <Drawer open={this.open} onClose={console.log("lol")}>
-        <List className={classes.sideList}>
+      <Drawer open={this.props.isSideBarOpen} onClose={this.props.closeSideBar}>
+        <List className={classes.sideList} onClick={this.props.closeSideBar}>
           <ListItem>
             <ListItemText
               classes={{primary:classes.listItemTextStatic}}
@@ -72,4 +73,12 @@ class SideBar extends Component {
   }
 }
 
-export default withStyles(styles)(SideBar);
+const mapStateToProps = state => ({
+  isSideBarOpen: state.controls.isSideBarOpen,
+});
+
+const mapDispatchToProps = dispatch => ({
+  closeSideBar: () => dispatch(closeSideBar())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(SideBar));

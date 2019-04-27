@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { openSideBar } from './actions';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ImportContacts from '@material-ui/icons/ImportContacts';
 import GTranslate from '@material-ui/icons/GTranslate';
-import SideBar from './SideBar';
 
 const styles = {
   grow: {
@@ -24,7 +25,12 @@ class NavigationBar extends Component {
     return (
         <AppBar className="black-text white">
           <Toolbar>
-            <IconButton color="inherit" aria-label="Menu" className={classes.menuButton}>
+            <IconButton
+              color="inherit"
+              aria-label="Menu"
+              className={classes.menuButton}
+              onClick={this.props.openSideBar}
+            >
               <MenuIcon />
             </IconButton>
             <div className={classes.grow} />
@@ -35,10 +41,13 @@ class NavigationBar extends Component {
               <ImportContacts />
             </IconButton>
           </Toolbar>
-          <SideBar />
         </AppBar>
     );
   }
 }
 
-export default withStyles(styles)(NavigationBar);
+const mapDispatchToProps = dispatch => ({
+  openSideBar: () => dispatch(openSideBar())
+});
+
+export default connect(null, mapDispatchToProps)(withStyles(styles)(NavigationBar));
