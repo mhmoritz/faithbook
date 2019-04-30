@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazy-load';
 import './Post.css'
-import {Collection, CollectionItem, Icon} from 'react-materialize'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -36,7 +35,7 @@ const Post = (props) => {
                 className="Profile-name"
                 href={props.link}
                 target="_blank"
-
+                rel="noopener noreferrer"
               >
                 {props.author}
               </a>

@@ -44,9 +44,9 @@ class SideBar extends Component {
 
   render() {
     const { classes } = this.props;
-    const items = this.state.categories.map(category => {
+    const items = this.state.categories.map((category, cnt) => {
       return (
-        <Link to={`/${category.key}`} className={classes.link}>
+        <Link to={`/${category.key}`} className={classes.link} key={cnt}>
           <ListItem button>
             <ListItemText
               classes={{primary:classes.listItemText}}

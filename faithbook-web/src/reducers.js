@@ -23,7 +23,7 @@ export const controls = (
 
 export const content = (
   state = {
-    language: 'en-us',
+    language: 'en',
   },
   action,
 ) => {
@@ -33,7 +33,7 @@ export const content = (
         ...state,
         language: action.language,
       }
-      default:
-        return state;
+    default:
+      return state;
   }
 }

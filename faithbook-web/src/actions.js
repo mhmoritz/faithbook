@@ -5,3 +5,8 @@ export const openSideBar = () => ({
 export const closeSideBar = () => ({
   type: 'CLOSE_SIDEBAR',
 });
+
+export const setLanguage = (language) => ({
+  type: 'SET_LANGUAGE',
+  language
+});
