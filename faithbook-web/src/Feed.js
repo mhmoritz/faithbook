@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import './Feed.css'
 import Post from './Post';
 
@@ -20,12 +21,12 @@ class Feed extends Component {
 
   componentWillMount = () => {
     let { category } = this.props.match.params;
-    this.fetchFeedFromServer(category, "ENG")
+    this.fetchFeedFromServer(category, this.props.language)
   }
 
   componentWillReceiveProps(nextProps) {
     let { category } = nextProps.match.params;
-    this.fetchFeedFromServer(category, "ENG")
+    this.fetchFeedFromServer(category, nextProps.language)
   }
 
   render() {
@@ -41,4 +42,8 @@ class Feed extends Component {
   }
 }
 
-export default Feed;
+const mapStateToProps = state => ({
+  language: state.content.language,
+});
+
+export default connect(mapStateToProps)(Feed);
