@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { openSideBar, setLanguage } from './actions';
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
+import TranslationSelector from './TranslationSelector';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -51,27 +52,25 @@ class NavigationBar extends Component {
             </IconButton>
             <div className={classes.grow} />
             <div>
-            <ReactFlagsSelect
-              disabled={false}
-              selectedSize={18}
-              optionsSize={14}
-              defaultCountry="US"
-              showSelectedLabel={false}
-              alignOptions="left"
-              countries={["US", "PT", "ES", "DE", "FR"]}
-              customLabels={{
-                "US": "English",
-                "PT": "Português",
-                "ES": "Español",
-                "DE": "Deutsch",
-                "FR": "Français",
-              }}
-              onSelect={this.onSelectLanguage}
-            />
+              <ReactFlagsSelect
+                disabled={false}
+                selectedSize={18}
+                optionsSize={14}
+                defaultCountry="US"
+                showSelectedLabel={false}
+                alignOptions="left"
+                countries={["US", "PT", "ES", "DE", "FR"]}
+                customLabels={{
+                  "US": "English",
+                  "PT": "Português",
+                  "ES": "Español",
+                  "DE": "Deutsch",
+                  "FR": "Français",
+                }}
+                onSelect={this.onSelectLanguage}
+              />
             </div>
-            <IconButton disableRipple={true} className={classes.button}>
-              <ImportContacts />
-            </IconButton>
+            <TranslationSelector />
           </Toolbar>
         </AppBar>
     );

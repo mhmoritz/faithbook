@@ -10,3 +10,8 @@ export const setLanguage = (language) => ({
   type: 'SET_LANGUAGE',
   language
 });
+
+export const setTranslation = (translation) => ({
+  type: 'SET_TRANSLATION',
+  translation
+});
