@@ -44,6 +44,7 @@ class Feed extends Component {
 
 const mapStateToProps = state => ({
   language: state.content.language,
+  translation: state.content.translation,
 });
 
 export default connect(mapStateToProps)(Feed);
