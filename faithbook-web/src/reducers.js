@@ -22,11 +22,9 @@ export const controls = (
 
 export const content = (
   state = {
-    language: 'en',
-    translation: {
-      'abbreviation': 'ESV',
-      'nativeName': 'English Standard Version'
-    },
+    language: '',
+    translation: {},
+    category: '',
   },
   action,
 ) => {
@@ -40,6 +38,11 @@ export const content = (
       return {
         ...state,
         translation: action.translation,
+      }
+    case 'SET_CATEGORY':
+      return {
+        ...state,
+        category: action.category,
       }
     default:
       return state;

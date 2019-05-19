@@ -15,3 +15,8 @@ export const setTranslation = (translation) => ({
   type: 'SET_TRANSLATION',
   translation
 });
+
+export const setCategory = (category) => ({
+  type: 'SET_CATEGORY',
+  category
+});
