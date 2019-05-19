@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   text: {
-    marginTop: '6px',
+    marginTop: '3px',
   },
 };
 

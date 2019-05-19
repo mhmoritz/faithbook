@@ -76,7 +76,6 @@ class TraSelector extends Component {
     if (language !== this.props.language) {
       this.fetchTranslationsFromServer(language)
     }
-		console.log(nextProps.translation)
   }
 
 	componentWillUnmount() {
@@ -89,7 +88,6 @@ class TraSelector extends Component {
 		let selectedSize = this.props.selectedSize;
 		let optionsSize = this.props.optionsSize;
 		let alignClass = this.props.alignOptions.toLowerCase() === 'left' ? 'to--left' : '';
-		console.log(this.state.openOptions)
 
 		return (
 			<div className={`flag-select ${this.props.className ? this.props.className :  ""}`}>
