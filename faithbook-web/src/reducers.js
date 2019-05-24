@@ -6,7 +6,6 @@ export const controls = (
 ) => {
   switch (action.type) {
     case 'OPEN_SIDEBAR':
-      console.log("open!")
       return {
         ...state,
         isSideBarOpen: true,
@@ -23,7 +22,9 @@ export const controls = (
 
 export const content = (
   state = {
-    language: 'en',
+    language: '',
+    translation: {},
+    category: '',
   },
   action,
 ) => {
@@ -32,6 +33,16 @@ export const content = (
       return {
         ...state,
         language: action.language,
+      }
+    case 'SET_TRANSLATION':
+      return {
+        ...state,
+        translation: action.translation,
+      }
+    case 'SET_CATEGORY':
+      return {
+        ...state,
+        category: action.category,
       }
     default:
       return state;

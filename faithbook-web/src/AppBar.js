@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { openSideBar, setLanguage } from './actions';
-import ReactFlagsSelect from 'react-flags-select';
-import 'react-flags-select/css/react-flags-select.css';
+import { openSideBar } from './actions';
+import LanguageMenu from './LanguageMenu';
+import TranslationMenu from './TranslationMenu';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ImportContacts from '@material-ui/icons/ImportContacts';
+import Logo from './logo.png';
 
 const styles = {
   mainBar:{
@@ -27,15 +28,15 @@ const styles = {
   inputFocused: {
     background: "$labelcolor",
     marginRight: 100,
+  },
+  logoImage: {
+    width: 120,
+    opacity: 0.7,
+    marginLeft: 15,
   }
 };
 
 class NavigationBar extends Component {
-  onSelectLanguage = (countryCode) => {
-    let language = countryCode.toLowerCase()
-    this.props.setLanguage(language);
-  }
-
   render() {
     const { classes } = this.props;
     return (
@@ -49,29 +50,10 @@ class NavigationBar extends Component {
             >
               <MenuIcon />
             </IconButton>
+            <img src={Logo} className={classes.logoImage}/>
             <div className={classes.grow} />
-            <div>
-            <ReactFlagsSelect
-              disabled={false}
-              selectedSize={18}
-              optionsSize={14}
-              defaultCountry="US"
-              showSelectedLabel={false}
-              alignOptions="left"
-              countries={["US", "PT", "ES", "DE", "FR"]}
-              customLabels={{
-                "US": "English",
-                "PT": "Português",
-                "ES": "Español",
-                "DE": "Deutsch",
-                "FR": "Français",
-              }}
-              onSelect={this.onSelectLanguage}
-            />
-            </div>
-            <IconButton disableRipple={true} className={classes.button}>
-              <ImportContacts />
-            </IconButton>
+            <LanguageMenu />
+            <TranslationMenu />
           </Toolbar>
         </AppBar>
     );
@@ -80,7 +62,6 @@ class NavigationBar extends Component {
 
 const mapDispatchToProps = dispatch => ({
   openSideBar: () => dispatch(openSideBar()),
-  setLanguage: (language) => dispatch(setLanguage(language))
 });
 
 export default connect(null, mapDispatchToProps)(withStyles(styles)(NavigationBar));
