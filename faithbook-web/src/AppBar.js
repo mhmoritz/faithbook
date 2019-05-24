@@ -9,6 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ImportContacts from '@material-ui/icons/ImportContacts';
+import Logo from './logo.png';
 
 const styles = {
   mainBar:{
@@ -27,6 +28,11 @@ const styles = {
   inputFocused: {
     background: "$labelcolor",
     marginRight: 100,
+  },
+  logoImage: {
+    width: 120,
+    opacity: 0.7,
+    marginLeft: 15,
   }
 };
 
@@ -44,6 +50,7 @@ class NavigationBar extends Component {
             >
               <MenuIcon />
             </IconButton>
+            <img src={Logo} className={classes.logoImage}/>
             <div className={classes.grow} />
             <LanguageMenu />
             <TranslationMenu />
