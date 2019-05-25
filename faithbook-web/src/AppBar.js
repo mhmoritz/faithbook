@@ -13,13 +13,15 @@ import Logo from './logo.png';
 
 const styles = {
   mainBar:{
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    justifyContent: "center",
+    alignItems: "center",
   },
   grow: {
     flexGrow: 1,
   },
   menuButton: {
-    marginLeft: -12,
+    marginLeft: 0,
     marginRight: 20,
   },
   button: {
@@ -32,7 +34,11 @@ const styles = {
   logoImage: {
     width: 120,
     opacity: 0.7,
-    marginLeft: 15,
+    marginLeft: 10,
+  },
+  toolBar: {
+    width: "100%",
+    maxWidth: 1024,
   }
 };
 
@@ -41,7 +47,7 @@ class NavigationBar extends Component {
     const { classes } = this.props;
     return (
         <AppBar className={classes.mainBar}>
-          <Toolbar>
+          <Toolbar className={classes.toolBar}>
             <IconButton
               color="default"
               aria-label="Menu"

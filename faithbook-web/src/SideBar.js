@@ -13,7 +13,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 const styles = {
   sideList: {
     width: 250,
-    marginTop: 85,
+    marginTop: 10,
   },
   sideListDynamicElement: {
     marginLeft: 25,
