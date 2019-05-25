@@ -60,13 +60,6 @@ class SideBar extends Component {
     return (
       <Drawer open={this.props.isSideBarOpen} onClose={this.props.closeSideBar}>
         <List className={classes.sideList} onClick={this.props.closeSideBar}>
-          <ListItem>
-            <ListItemText
-              classes={{primary:classes.listItemText}}
-              primary={"Categories"}
-            />
-          </ListItem>
-          <Divider />
           {items}
         </List>
       </Drawer>

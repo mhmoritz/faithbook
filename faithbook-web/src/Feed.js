@@ -14,7 +14,6 @@ class Feed extends Component {
   }
 
   fetchFeedFromServer = (category, language, translation) => {
-    console.log("lol")
     axios.get(`http://127.0.0.1:5000/feed?category=${category}&language=${language}&translation=${translation}`)
       .then(response => {
         this.setState({posts: response.data.posts});
