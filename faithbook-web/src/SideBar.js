@@ -36,7 +36,7 @@ class SideBar extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://127.0.0.1:5000/allCategories")
+    axios.get("http://backend-env.mmkwrgit9f.eu-west-2.elasticbeanstalk.com/allCategories")
       .then(response => {
         this.setState({categories: response.data});
     });
