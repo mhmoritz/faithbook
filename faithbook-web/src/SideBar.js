@@ -9,6 +9,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import LinkCreator from './LinkCreator';
 
 const styles = {
   sideList: {
@@ -69,6 +70,17 @@ class SideBar extends Component {
           <Divider />
           {items}
         </List>
+
+        <div className ='StdLinks'>
+          <LinkCreator linkname="Terms" link = "localhost:3000/friends"></LinkCreator>
+          <LinkCreator linkname="Privacy" link = "localhost:3000/love"></LinkCreator>
+          <LinkCreator linkname="FAQ" link = "localhost:3000/talent"></LinkCreator>
+          <LinkCreator linkname="Manage consent" link = "localhost:3000/faith"></LinkCreator>
+          &nbsp;
+          <span className ='StdLinkText'>FAITHBOOK &#169; 2019
+          </span>
+        </div>
+
       </Drawer>
     );
   }

@@ -1,0 +1,13 @@
+.StdLinks{
+display: inline-block;
+padding-top: 72%;
+text-align: center;
+padding-left: 5%;
+}
+.StdLinkText{
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 5px;
+  color: Grey;
+  display: inline-block;
+}
