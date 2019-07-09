@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './LinkCreator.css';
-
 class LinkCreator extends Component {
-
-
       render(){
         return(
           <span>
@@ -13,12 +10,11 @@ class LinkCreator extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
                 >
-                {this.props.linkname}
+                {this.props.linkName}
               </a>
-              &nbsp; &nbsp;
+              <br></br>
           </span>
         );
       }
 }
-
 export default LinkCreator;

@@ -70,17 +70,13 @@ class SideBar extends Component {
           <Divider />
           {items}
         </List>
-
-        <div className ='StdLinks'>
-          <LinkCreator linkname="Terms" link = "localhost:3000/friends"></LinkCreator>
-          <LinkCreator linkname="Privacy" link = "localhost:3000/love"></LinkCreator>
-          <LinkCreator linkname="FAQ" link = "localhost:3000/talent"></LinkCreator>
-          <LinkCreator linkname="Manage consent" link = "localhost:3000/faith"></LinkCreator>
-          &nbsp;
-          <span className ='StdLinkText'>FAITHBOOK &#169; 2019
-          </span>
+        <div className='StdLinkGroup'>
+          <LinkCreator linkName="Terms" link = "localhost:3000/friends"></LinkCreator>
+          <LinkCreator linkName="Privacy" link = "localhost:3000/love"></LinkCreator>
+          <LinkCreator linkName="FAQ" link = "localhost:3000/talent"></LinkCreator>
+          <LinkCreator linkName="Manage consent" link = "localhost:3000/faith"></LinkCreator>
+          <s className='StdLinkText'>FAITHBOOK &#169; 2019</s>
         </div>
-
       </Drawer>
     );
   }
