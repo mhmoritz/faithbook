@@ -40,6 +40,7 @@ export const content = (
         translation: action.translation,
       }
     case 'SET_CATEGORY':
+      window.scrollTo(0, 0);
       return {
         ...state,
         category: action.category,

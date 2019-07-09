@@ -18,7 +18,7 @@ class TraSelector extends Component {
 	}
 
 	fetchTranslationsFromServer(language) {
-    axios.get(`http://127.0.0.1:5000/translations?language=${language}`)
+    axios.get(`http://backend-env.mmkwrgit9f.eu-west-2.elasticbeanstalk.com/translations?language=${language}`)
       .then(response => {
         this.setState({...this.state, translations: response.data});
         this.props.setTranslation(response.data[0])
@@ -124,7 +124,7 @@ class TraSelector extends Component {
 
 TraSelector.defaultProps = {
 	selectedSize: 18,
-	optionsSize: 14,
+	optionsSize: 16,
 	placeholder: "Select a country",
 	showSelectedLabel: true,
 	showOptionLabel: true,

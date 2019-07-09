@@ -1,8 +1,7 @@
 .Post {
   position: relative;
-  min-width: 600px;
-  width: 60%;
-  max-width: 1400px;
+  width: 100%;
+  max-width: 500px;
   margin-bottom: 40px;
 }
 
@@ -43,7 +42,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.65);
+  background-color: rgba(0,0,0,0.69);
   overflow: hidden;
 }
 
@@ -52,8 +51,9 @@
   position: relative;
   top: 50%;
   left: 50%;
-  font-size: 20px;
+  font-size: 150%;
   color: white;
+  padding: 10px;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }

@@ -13,7 +13,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 const styles = {
   sideList: {
     width: 250,
-    marginTop: 85,
+    marginTop: 10,
   },
   sideListDynamicElement: {
     marginLeft: 25,
@@ -35,11 +35,25 @@ class SideBar extends Component {
     };
   }
 
-  componentDidMount() {
-    axios.get("http://127.0.0.1:5000/allCategories")
+  fetchDisplayNamesFromServer = (language) => {
+    axios.get(`http://backend-env.mmkwrgit9f.eu-west-2.elasticbeanstalk.com/allCategories?language=${language}`)
       .then(response => {
         this.setState({categories: response.data});
     });
+  }
+
+  componentDidMount() {
+    const { language } = this.props;
+    this.fetchDisplayNamesFromServer(language)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const wasLanguageChanged = nextProps.language !== this.props.language;
+    console.log(wasLanguageChanged)
+    if (wasLanguageChanged) {
+      console.log("Language was changed, gonna fetch")
+      this.fetchDisplayNamesFromServer(nextProps.language)
+    }
   }
 
   render() {
@@ -60,13 +74,6 @@ class SideBar extends Component {
     return (
       <Drawer open={this.props.isSideBarOpen} onClose={this.props.closeSideBar}>
         <List className={classes.sideList} onClick={this.props.closeSideBar}>
-          <ListItem>
-            <ListItemText
-              classes={{primary:classes.listItemText}}
-              primary={"Categories"}
-            />
-          </ListItem>
-          <Divider />
           {items}
         </List>
       </Drawer>
@@ -76,6 +83,7 @@ class SideBar extends Component {
 
 const mapStateToProps = state => ({
   isSideBarOpen: state.controls.isSideBarOpen,
+  language: state.content.language,
 });
 
 const mapDispatchToProps = dispatch => ({

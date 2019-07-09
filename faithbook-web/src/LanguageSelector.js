@@ -16,7 +16,7 @@ class LanguageSelector extends Component {
         <ReactFlagsSelect
           disabled={false}
           selectedSize={18}
-          optionsSize={14}
+          optionsSize={16}
           defaultCountry="US"
           showSelectedLabel={false}
           alignOptions="left"
