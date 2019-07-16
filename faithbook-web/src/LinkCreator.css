@@ -1,6 +1,8 @@
 .StdLinkGroup{
-padding-top: 5px;
-text-align: center;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 15px;
+text-align: left;
 }
 .StdLinkText{
   text-decoration: none;
