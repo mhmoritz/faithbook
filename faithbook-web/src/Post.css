@@ -30,9 +30,9 @@
 
 .Profile-name {
   text-decoration: underline;
-  font-weight: bold;
+  font-weight: normal;
   font-style: italic;
-  color: Grey;
+  color: dimgrey;
   vertical-align: middle;
   font-size: 14px;
 }
