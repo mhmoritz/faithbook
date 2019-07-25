@@ -28,6 +28,15 @@
 
 }
 
+.External-link {
+  text-decoration: underline;
+  font-weight: normal;
+  font-style: italic;
+  color: dimgrey;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
 .Profile-name {
   text-decoration: underline;
   font-weight: normal;
