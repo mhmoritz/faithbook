@@ -24,20 +24,9 @@
   border-style: double;
   border-width: thin;
   border-color: rgba(5,5,5,0.21);
-
-
 }
 
 .Post-credit{
-  text-decoration: underline;
-  font-weight: normal;
-  font-style: italic;
-  color: dimgrey;
-  vertical-align: middle;
-  font-size: 14px;
-}
-
-.Profile-name {
   text-decoration: underline;
   font-weight: normal;
   font-style: italic;
