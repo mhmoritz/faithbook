@@ -32,14 +32,14 @@ const Post = (props) => {
             <span className="Panel-text">
               Photo by&nbsp;
               <a
-                className="Profile-name"
+                className="Post-credit"
                 href={props.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 >{props.author}
               </a>&nbsp;on&nbsp;
               <a
-                className="External-link"
+                className="Post-credit"
                 href={"https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"}
                 target="_blank"
                 rel="noopener noreferrer"
