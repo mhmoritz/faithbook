@@ -9,6 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ImportContacts from '@material-ui/icons/ImportContacts';
+import { Link } from 'react-router-dom';
 import Logo from './logo.png';
 
 const styles = {
@@ -56,7 +57,9 @@ class NavigationBar extends Component {
             >
               <MenuIcon />
             </IconButton>
-            <img src={Logo} className={classes.logoImage}/>
+            <Link to="/daily">
+              <img src={Logo} className={classes.logoImage}/>
+            </Link>
             <div className={classes.grow} />
             <LanguageMenu />
             <TranslationMenu />
