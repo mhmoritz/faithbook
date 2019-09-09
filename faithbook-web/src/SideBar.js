@@ -10,6 +10,8 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { NavLink } from 'react-router-dom';
+import LinkCreator from './LinkCreator';
+import { fetchDisplayNamesFromServer } from ConnectionHandler
 
 const styles = {
   sideList: {
@@ -40,14 +42,6 @@ class SideBar extends Component {
     this.state = {
       categories: [],
     };
-  }
-
-  fetchDisplayNamesFromServer = (language) => {
-    axios.get(`https://dv2dt9p1r9xgg.cloudfront.net/allCategories?language=${language}`)
-      .then(response => {
-        this.props.setTitles(response.data);
-        this.setState({categories: response.data});
-    });
   }
 
   componentDidMount() {

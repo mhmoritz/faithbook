@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setTranslation } from './actions';
 import axios from 'axios';
+import { fetchTranslationsFromServer } from ConnectionHandler
 
 class TraSelector extends Component {
 	constructor(props){
@@ -16,14 +17,6 @@ class TraSelector extends Component {
 		this.closeOptions = this.closeOptions.bind(this);
 		this.onSelect = this.onSelect.bind(this);
 	}
-
-	fetchTranslationsFromServer(language) {
-    axios.get(`https://dv2dt9p1r9xgg.cloudfront.net/translations?language=${language}`)
-      .then(response => {
-        this.setState({...this.state, translations: response.data});
-        this.props.setTranslation(response.data[0])
-    });
-  }
 
 	toggleOptions() {
 		!this.state.disabled && this.setState({

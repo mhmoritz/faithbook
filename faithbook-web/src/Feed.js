@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setCategory } from './actions';
 import './Feed.css'
 import Post from './Post';
+import { fetchFeedFromServer } from ConnectionHandler
 
 class Feed extends Component {
   constructor(props) {
@@ -11,13 +12,6 @@ class Feed extends Component {
     this.state = {
       posts: [],
     }
-  }
-
-  fetchFeedFromServer = (category, language, translation) => {
-    axios.get(`https://dv2dt9p1r9xgg.cloudfront.net/feed?category=${category}&language=${language}&translation=${translation}`)
-      .then(response => {
-        this.setState({posts: response.data.posts});
-    });
   }
 
   componentWillMount() {
