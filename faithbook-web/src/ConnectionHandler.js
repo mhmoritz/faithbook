@@ -1,34 +1,34 @@
+import axios from 'axios';
 
+const backendURL = 'https://dv2dt9p1r9xgg.cloudfront.net/';
 
 class ConnectionHandler {
 
-  var backendURL = 'https://dv2dt9p1r9xgg.cloudfront.net/'
-
   //Feed
-  fetchFeedFromServer = (category, language, translation) => {
+  fetchFeedFromServer = (category, language, translation, callback) => {
     axios.get(`${backendURL}feed?category=${category}&language=${language}&translation=${translation}`)
       .then(response => {
-        this.setState({posts: response.data.posts});
+        callback(response.data.posts);
     });
   }
 
   //SideBar
-  fetchDisplayNamesFromServer = (language) => {
+  fetchDisplayNamesFromServer = (language, callback) => {
     axios.get(`${backendURL}allCategories?language=${language}`)
       .then(response => {
-        this.setState({categories: response.data});
+        callback(response.data);
     });
   }
 
   //TranslationSelector
-  fetchTranslationsFromServer(language) {
+  fetchTranslationsFromServer = (language, callback) => {
     axios.get(`${backendURL}translations?language=${language}`)
       .then(response => {
-        this.setState({...this.state, translations: response.data});
-        this.props.setTranslation(response.data[0])
+          callback(response.data);
     });
   }
-
-
-
 }
+
+const connectionHandler = new ConnectionHandler();
+
+export default connectionHandler;

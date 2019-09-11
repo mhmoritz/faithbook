@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { setCategory } from './actions';
 import './Feed.css'
 import Post from './Post';
-import { fetchFeedFromServer } from ConnectionHandler
+import connectionHandler from './ConnectionHandler';
 
 class Feed extends Component {
   constructor(props) {
@@ -12,19 +12,25 @@ class Feed extends Component {
     this.state = {
       posts: [],
     }
+    this.postsAreAvailable = this.postsAreAvailable.bind(this);
+  }
+
+  postsAreAvailable(posts) {
+    this.setState({...this.state, posts: posts});
   }
 
   componentWillMount() {
     let { category } = this.props.match.params;
-    this.fetchFeedFromServer(category, this.props.language, this.props.translation.abbreviation)
+    connectionHandler.fetchFeedFromServer(category, this.props.language, this.props.translation.abbreviation, this.postsAreAvailable);
   }
+
 
   componentWillReceiveProps(nextProps) {
     let { category } = nextProps.match.params;
     const wasCategoryChanged = category !== this.props.category;
     const wasTranslationChanged = nextProps.translation.abbreviation !== this.props.translation.abbreviation;
     if (wasCategoryChanged || wasTranslationChanged) {
-      this.fetchFeedFromServer(category, nextProps.language, nextProps.translation.abbreviation)
+      connectionHandler.fetchFeedFromServer(category, nextProps.language, nextProps.translation.abbreviation, this.postsAreAvailable);
     }
     this.props.setCategory(category);
   }

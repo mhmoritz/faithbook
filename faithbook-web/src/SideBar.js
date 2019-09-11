@@ -11,7 +11,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { NavLink } from 'react-router-dom';
 import LinkCreator from './LinkCreator';
-import { fetchDisplayNamesFromServer } from ConnectionHandler
+import connectionHandler from './ConnectionHandler';
 
 const styles = {
   sideList: {
@@ -42,17 +42,22 @@ class SideBar extends Component {
     this.state = {
       categories: [],
     };
+    this.categoriesAreAvailable = this.categoriesAreAvailable.bind(this);
+  }
+
+  categoriesAreAvailable(categories) {
+    this.setState({...this.state, categories: categories});
   }
 
   componentDidMount() {
     const { language } = this.props;
-    this.fetchDisplayNamesFromServer(language)
+    connectionHandler.fetchDisplayNamesFromServer(language, this.categoriesAreAvailable);
   }
 
   componentWillReceiveProps(nextProps) {
     const wasLanguageChanged = nextProps.language !== this.props.language;
     if (wasLanguageChanged) {
-      this.fetchDisplayNamesFromServer(nextProps.language)
+      connectionHandler.fetchDisplayNamesFromServer(nextProps.language, this.categoriesAreAvailable);
     }
   }
 
