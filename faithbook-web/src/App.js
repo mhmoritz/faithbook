@@ -3,6 +3,7 @@ import { Route, Switch, Redirect, BrowserRouter as Router } from 'react-router-d
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
 import Feed from './Feed.js';
+import Footer from './Footer.js';
 import AppBar from './AppBar';
 import SideBar from './SideBar';
 
@@ -26,6 +27,7 @@ class App extends Component {
               <Redirect exact from="/" to="/daily" />
               <Route exact path='/:category' component={Feed} />
             </Switch>
+            <Footer/>
           </div>
         </MuiThemeProvider>
       </Router>
