@@ -28,8 +28,8 @@ class App extends Component {
               <Redirect exact from="/feed" to="/feed/daily" />
               <Route exact path='/feed/:category' component={Feed} />
             </Switch>
+            <Footer />
           </div>
-        <Footer />
         </MuiThemeProvider>
       </Router>
     );
