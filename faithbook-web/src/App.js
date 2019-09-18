@@ -24,11 +24,12 @@ class App extends Component {
             <AppBar />
             <SideBar />
             <Switch>
-              <Redirect exact from="/" to="/daily" />
-              <Route exact path='/:category' component={Feed} />
+              <Redirect exact from="/" to="/feed/daily" />
+              <Redirect exact from="/feed" to="/feed/daily" />
+              <Route exact path='/feed/:category' component={Feed} />
             </Switch>
-            <Footer/>
           </div>
+        <Footer />
         </MuiThemeProvider>
       </Router>
     );
