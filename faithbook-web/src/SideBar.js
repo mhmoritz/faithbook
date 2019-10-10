@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import LinkCreator from './LinkCreator';
+import { NavLink } from 'react-router-dom';
 
 const styles = {
   sideList: {
@@ -61,7 +61,7 @@ class SideBar extends Component {
     const { classes } = this.props;
     const items = this.state.categories.map((category, cnt) => {
       return (
-        <Link to={`/${category.key}`} className={classes.link} key={cnt}>
+        <Link to={`/feed/${category.key}`} className={classes.link} key={cnt}>
           <ListItem button>
             <ListItemText
               classes={{primary:classes.listItemText}}
@@ -79,10 +79,10 @@ class SideBar extends Component {
         </List>
         <Divider />
         <div className='StdLinkGroup'>
-          <LinkCreator linkName="Terms" link="localhost:3000/friends"/>
-          <LinkCreator linkName="Privacy" link="localhost:3000/love"/>
-          <LinkCreator linkName="FAQ" link="localhost:3000/talent"/>
-          <LinkCreator linkName="Manage consent" link="localhost:3000/faith"/>
+          <NavLink to= "/terms" className="StdLinkText"> Terms </NavLink> <br/>
+          <NavLink to= "/privacy" className="StdLinkText"> Privacy </NavLink> <br/>
+          <NavLink to= "/faq" className="StdLinkText"> FAQ </NavLink> <br/>
+          <NavLink to= "/manageconsent" className="StdLinkText"> Manage Consent </NavLink> <br/>
           <s className='StdLinkText'>FAITHBOOK &#169; 2019</s>
         </div>
         <Divider />

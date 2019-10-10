@@ -3,6 +3,8 @@ import { Route, Switch, Redirect, BrowserRouter as Router } from 'react-router-d
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
 import Feed from './Feed.js';
+import Footer from './Footer.js';
+import {Terms, Privacy, FAQ, ManageConsent} from "./Legals.js";
 import AppBar from './AppBar';
 import SideBar from './SideBar';
 
@@ -23,9 +25,15 @@ class App extends Component {
             <AppBar />
             <SideBar />
             <Switch>
-              <Redirect exact from="/" to="/daily" />
-              <Route exact path='/:category' component={Feed} />
+              <Redirect exact from="/" to="/feed/daily" />
+              <Redirect exact from="/feed" to="/feed/daily" />
+              <Route exact path='/feed/:category' component={Feed} />
+              <Route exact path='/terms' component={Terms} />
+              <Route exact path='/privacy' component={Privacy} />
+              <Route exact path='/faq' component={FAQ} />
+              <Route exact path='/manageconsent' component={ManageConsent} />
             </Switch>
+            <Footer />
           </div>
         </MuiThemeProvider>
       </Router>
