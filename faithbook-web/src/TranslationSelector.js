@@ -18,7 +18,7 @@ class TraSelector extends Component {
 	}
 
 	fetchTranslationsFromServer(language) {
-    axios.get(`http://backend-env.mmkwrgit9f.eu-west-2.elasticbeanstalk.com/translations?language=${language}`)
+    axios.get(`https://gn1ddit7sh.execute-api.us-east-2.amazonaws.com/dev/translations?language=${language}`)
       .then(response => {
         this.setState({...this.state, translations: response.data});
         this.props.setTranslation(response.data[0])
