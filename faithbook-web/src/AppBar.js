@@ -57,7 +57,7 @@ class NavigationBar extends Component {
             >
               <MenuIcon />
             </IconButton>
-            <Link to="/daily">
+            <Link to="/feed/daily">
               <img src={Logo} className={classes.logoImage}/>
             </Link>
             <div className={classes.grow} />
