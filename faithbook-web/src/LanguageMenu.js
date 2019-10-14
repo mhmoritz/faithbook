@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import LanguageSelector from './LanguageSelector';
-import ReactFlagsSelect from 'react-flags-select';
-import 'react-flags-select/css/react-flags-select.css';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
