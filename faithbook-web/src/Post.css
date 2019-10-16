@@ -68,11 +68,21 @@
 }
 
 .Panel {
-  padding-bottom: 1%;
+  height: 40px;
 }
 .Panel-text{
-  margin-left: 10px;
+  margin-left: 5px;
   vertical-align: middle;
   font-style: italic;
+  font-size: 14px;
+}
+
+.Breadcrumb {
+  position: absolute;
+  border-radius: 4px;
+  padding: 4px;
+  right: 10px;
+  color: white;
+  vertical-align: middle;
   font-size: 14px;
 }

@@ -37,7 +37,17 @@ class Feed extends Component {
 
   render() {
     const posts = this.state.posts.map(post => {
-      return <Post text={post.post_text} source={post.post_source} image={post.image_url} author={post.author_name} profile={post.author_image_url} link={post.author_hotlink}/>
+      return (
+        <Post
+          text={post.post_text}
+          source={post.post_source}
+          image={post.image_url}
+          author={post.author_name}
+          profile={post.author_image_url}
+          link={post.author_hotlink}
+          category={this.props.titles[post.category]}
+        />
+      )
     });
     return (
       <div className="Feed">
@@ -51,6 +61,7 @@ const mapStateToProps = state => ({
   language: state.content.language,
   translation: state.content.translation,
   category: state.content.category,
+  titles: state.content.titles,
 });
 
 const mapDispatchToProps = dispatch => ({

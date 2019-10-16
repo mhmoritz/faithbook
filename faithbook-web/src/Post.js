@@ -23,7 +23,7 @@ const Post = (props) => {
               <div className="Overlay-Source">{props.source}</div>
             </div>
           </CardActionArea>
-          <CardActions>
+          <CardActions className="Panel">
             <div>
 
             <span className="Panel-text">
@@ -42,6 +42,9 @@ const Post = (props) => {
                 rel="noopener noreferrer"
                 >Unsplash
               </a>
+            </span>
+            <span className="Breadcrumb" style={{backgroundColor: '#aaaaaadd'}}>
+              {props.category}
             </span>
             </div>
           </CardActions>

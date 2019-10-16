@@ -25,6 +25,7 @@ export const content = (
     language: '',
     translation: {},
     category: '',
+    titles: {},
   },
   action,
 ) => {
@@ -44,6 +45,15 @@ export const content = (
       return {
         ...state,
         category: action.category,
+      }
+    case 'SET_TITLES':
+      let titles = {};
+      const entries = action.titles.forEach(entry => {
+        titles[entry.key] = entry.title;
+      });
+      return {
+        ...state,
+        titles: titles,
       }
     default:
       return state;
