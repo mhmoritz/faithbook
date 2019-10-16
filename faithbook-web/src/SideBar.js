@@ -37,7 +37,7 @@ class SideBar extends Component {
   }
 
   fetchDisplayNamesFromServer = (language) => {
-    axios.get(`http://backend-env.mmkwrgit9f.eu-west-2.elasticbeanstalk.com/allCategories?language=${language}`)
+    axios.get(`https://dv2dt9p1r9xgg.cloudfront.net/allCategories?language=${language}`)
       .then(response => {
         this.setState({categories: response.data});
     });
@@ -66,7 +66,7 @@ class SideBar extends Component {
             <ListItemText
               classes={{primary:classes.listItemText}}
               className={classes.sideListDynamicElement}
-              primary={category.displayName}
+              primary={category.title}
             />
           </ListItem>
         </Link>

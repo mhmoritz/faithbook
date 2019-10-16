@@ -14,7 +14,7 @@ class Feed extends Component {
   }
 
   fetchFeedFromServer = (category, language, translation) => {
-    axios.get(`http://backend-env.mmkwrgit9f.eu-west-2.elasticbeanstalk.com/feed?category=${category}&language=${language}&translation=${translation}`)
+    axios.get(`https://dv2dt9p1r9xgg.cloudfront.net/feed?category=${category}&language=${language}&translation=${translation}`)
       .then(response => {
         this.setState({posts: response.data.posts});
     });

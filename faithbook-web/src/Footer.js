@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Route, Switch, Redirect, BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Links.css";
 const Footer = (props) => {
