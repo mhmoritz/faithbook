@@ -37,7 +37,7 @@ class SideBar extends Component {
   }
 
   fetchDisplayNamesFromServer = (language) => {
-    axios.get(`https://gn1ddit7sh.execute-api.us-east-2.amazonaws.com/dev/allCategories?language=${language}`)
+    axios.get(`https://dv2dt9p1r9xgg.cloudfront.net/allCategories?language=${language}`)
       .then(response => {
         this.setState({categories: response.data});
     });
