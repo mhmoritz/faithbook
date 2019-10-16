@@ -25,10 +25,7 @@ const Post = (props) => {
           </CardActionArea>
           <CardActions>
             <div>
-            <img className="Profile-img"
-              src={props.profile}
-              alt=""
-            />
+
             <span className="Panel-text">
               Photo by&nbsp;
               <a

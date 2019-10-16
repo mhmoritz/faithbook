@@ -17,6 +17,7 @@ const styles = {
     backgroundColor: '#ffffff',
     justifyContent: "center",
     alignItems: "center",
+    height: '50px',
   },
   grow: {
     flexGrow: 1,
@@ -33,7 +34,8 @@ const styles = {
     marginRight: 100,
   },
   logoImage: {
-    width: 120,
+    width: '90px',
+    height: 'auto',
     opacity: 0.7,
     marginLeft: 10,
   },
