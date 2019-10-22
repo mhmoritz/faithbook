@@ -14,7 +14,7 @@ const Post = (props) => {
           <CardActionArea>
             <CardMedia
               component="img"
-              alt=""
+              alt={props.altText}
               className={Image}
               image={props.image}
             />
@@ -23,12 +23,8 @@ const Post = (props) => {
               <div className="Overlay-Source">{props.source}</div>
             </div>
           </CardActionArea>
-          <CardActions>
+          <CardActions className="Panel">
             <div>
-            <img className="Profile-img"
-              src={props.profile}
-              alt=""
-            />
             <span className="Panel-text">
               Photo by&nbsp;
               <a
@@ -45,6 +41,9 @@ const Post = (props) => {
                 rel="noopener noreferrer"
                 >Unsplash
               </a>
+            </span>
+            <span className="Breadcrumb" style={{backgroundColor: '#aaaaaadd'}}>
+              {props.category}
             </span>
             </div>
           </CardActions>

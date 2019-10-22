@@ -20,3 +20,8 @@ export const setCategory = (category) => ({
   type: 'SET_CATEGORY',
   category
 });
+
+export const setTitles = (titles) => ({
+  type: 'SET_TITLES',
+  titles
+});

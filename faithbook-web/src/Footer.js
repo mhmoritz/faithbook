@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Links.css";
-const Footer = (props) => {
+import "./Footer.css";
+
+const Footer = () => {
   return (
-    <div>
+    <div className="Footer">
       <a className="StdLinkText-Bottom">
         <NavLink to= "/terms" className="StdLinkText"> Terms </NavLink> &ensp;
         <NavLink to= "/privacy" className="StdLinkText"> Privacy </NavLink> &ensp;

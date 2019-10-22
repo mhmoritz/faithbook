@@ -15,7 +15,7 @@ class LanguageSelector extends Component {
       <div className={null}>
         <ReactFlagsSelect
           disabled={false}
-          selectedSize={18}
+          selectedSize={16}
           optionsSize={16}
           defaultCountry="US"
           showSelectedLabel={false}
