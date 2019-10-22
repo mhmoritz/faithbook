@@ -117,7 +117,7 @@ export const Privacy =() => {
           <h2 className="Headline" style={{"white-space": "pre-wrap"}}>Users in the European Union and European Economic Area</h2>
           <p>If you’re a user in the European Union or European Economic Area, please note that BibleFeed Ltd. is the data controller of your information. Here’s additional information we would like you to know:</p>
           <h3 className="Headline" style={{"white-space": "pre-wrap"}}>Bases For Using Your Information</h3>
-          <p>Your country only allows us to use your personal information when certain conditions apply or are met. These conditions are called legal bases. At 9GAG, we rely on one of the following bases:</p>
+          <p>Your country only allows us to use your personal information when certain conditions apply or are met. These conditions are called legal bases. At BibleFeed, we rely on one of the following bases:</p>
           <ul data-rte-list="default">
               <li>
                   <p><strong>Legitimate Interest.</strong> We may use your information because we - or a third party - has a legitimate interest. For example, we need to use your information to provide, maintain and improve our services. To keep the lights on at BibleFeed HQ, we may use this information to show you relevant ads.</p>
