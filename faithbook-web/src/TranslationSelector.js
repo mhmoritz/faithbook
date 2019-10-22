@@ -123,7 +123,7 @@ class TraSelector extends Component {
 }
 
 TraSelector.defaultProps = {
-	selectedSize: 18,
+	selectedSize: 16,
 	optionsSize: 16,
 	placeholder: "Select a country",
 	showSelectedLabel: true,
