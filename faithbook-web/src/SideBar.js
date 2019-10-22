@@ -17,7 +17,7 @@ const styles = {
     marginTop: 10,
   },
   sideListDynamicElement: {
-    marginLeft: 25,
+    left: 25,
   },
   listItemText: {
     fontWeight: 500,
@@ -26,6 +26,12 @@ const styles = {
   link: {
     textDecoration: 'none',
   },
+  circle: {
+    background: "#f00",
+    width: 7,
+    height: 7,
+    borderRadius: "50%",
+  }
 };
 
 class SideBar extends Component {
@@ -57,15 +63,20 @@ class SideBar extends Component {
   }
 
   render() {
-    const { classes } = this.props;
-    const items = this.state.categories.map((category, cnt) => {
+    const { classes, category } = this.props;
+    const items = this.state.categories.map((title, cnt) => {
+      const active = category === title.key;
       return (
-        <Link to={`/feed/${category.key}`} className={classes.link} key={cnt}>
+        <Link to={`/feed/${title.key}`} className={classes.link} key={cnt}>
           <ListItem button>
-            <ListItemText
+            <div
+              className={classes.circle}
+              style={{visibility: active ? "visible" : "hidden"}}
+            />
+          <ListItemText
               classes={{primary:classes.listItemText}}
               className={classes.sideListDynamicElement}
-              primary={category.title}
+              primary={title.title}
             />
           </ListItem>
         </Link>
@@ -93,6 +104,7 @@ class SideBar extends Component {
 const mapStateToProps = state => ({
   isSideBarOpen: state.controls.isSideBarOpen,
   language: state.content.language,
+  category: state.content.category,
 });
 
 const mapDispatchToProps = dispatch => ({
