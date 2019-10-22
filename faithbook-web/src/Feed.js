@@ -45,6 +45,7 @@ class Feed extends Component {
           author={post.author_name}
           profile={post.author_image_url}
           link={post.author_hotlink}
+          altText={post.alt_text}
           category={this.props.titles[post.category]}
         />
       )

@@ -14,7 +14,7 @@ const Post = (props) => {
           <CardActionArea>
             <CardMedia
               component="img"
-              alt=""
+              alt={props.altText}
               className={Image}
               image={props.image}
             />
@@ -25,7 +25,6 @@ const Post = (props) => {
           </CardActionArea>
           <CardActions className="Panel">
             <div>
-
             <span className="Panel-text">
               Photo by&nbsp;
               <a
