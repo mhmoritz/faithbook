@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { closeSideBar, setTitles } from './actions';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -10,7 +9,6 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { NavLink } from 'react-router-dom';
-import LinkCreator from './LinkCreator';
 import connectionHandler from './ConnectionHandler';
 
 const styles = {
@@ -47,6 +45,7 @@ class SideBar extends Component {
 
   categoriesAreAvailable(categories) {
     this.setState({...this.state, categories: categories});
+    this.props.setTitles(categories);
   }
 
   componentDidMount() {
