@@ -5,20 +5,29 @@ import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
 
 class LanguageSelector extends Component {
+  constructor(props) {
+    super(props);
+    this.flagSelector = React.createRef();
+  }
+
   onSelectLanguage = (countryCode) => {
     let language = countryCode.toLowerCase()
     this.props.setLanguage(language);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.flagSelector.current.updateSelected(nextProps.language.toUpperCase());
+  }
+
   render() {
-    console.log(typeof this.props.language.toUpperCase());
     return (
       <div className={null}>
         <ReactFlagsSelect
+          ref={this.flagSelector}
           disabled={false}
           selectedSize={16}
           optionsSize={16}
-          defaultCountry={this.props.language.toUpperCase()}
+          defaultCountry="US"
           showSelectedLabel={false}
           alignOptions="left"
           countries={["US", "PT", "ES", "DE", "FR"]}
