@@ -1,8 +1,18 @@
 import axios from 'axios';
 
 const backendURL = 'https://dv2dt9p1r9xgg.cloudfront.net/';
+let langAbbreviation ='en'
+
 
 class ConnectionHandler {
+
+  //browserLanguage
+  fetchUserLanguage = (callback) => {
+    axios.get(`${backendURL}init`)
+      .then(response => {
+         callback(response.data.language);
+      })
+  }
 
   //Feed
   fetchFeedFromServer = (category, language, translation, callback) => {

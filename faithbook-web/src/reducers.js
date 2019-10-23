@@ -33,6 +33,8 @@ export const content = (
 ) => {
   switch (action.type) {
     case 'SET_LANGUAGE':
+    console.log(action.language === null);
+    console.log('Hallo Welt');
       return {
         ...state,
         language: action.language,

@@ -11,13 +11,14 @@ class LanguageSelector extends Component {
   }
 
   render() {
+    console.log(typeof this.props.language.toUpperCase());
     return (
       <div className={null}>
         <ReactFlagsSelect
           disabled={false}
           selectedSize={16}
           optionsSize={16}
-          defaultCountry="US"
+          defaultCountry={this.props.language.toUpperCase()}
           showSelectedLabel={false}
           alignOptions="left"
           countries={["US", "PT", "ES", "DE", "FR"]}
@@ -35,8 +36,12 @@ class LanguageSelector extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  language: state.content.language,
+});
+
 const mapDispatchToProps = dispatch => ({
   setLanguage: (language) => dispatch(setLanguage(language))
 });
 
-export default connect(null, mapDispatchToProps)(LanguageSelector);
+export default connect(mapStateToProps, mapDispatchToProps)(LanguageSelector);
