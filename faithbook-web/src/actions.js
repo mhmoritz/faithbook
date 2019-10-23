@@ -11,9 +11,14 @@ export const setLanguage = (language) => ({
   language
 });
 
-export const setTranslation = (translation) => ({
-  type: 'SET_TRANSLATION',
+export const setActiveTranslation = (translation) => ({
+  type: 'SET_ACTIVE_TRANSLATION',
   translation
+});
+
+export const setTranslations = (translations) => ({
+  type: 'SET_TRANSLATIONS',
+  translations
 });
 
 export const setCategory = (category) => ({
@@ -24,4 +29,9 @@ export const setCategory = (category) => ({
 export const setTitles = (titles) => ({
   type: 'SET_TITLES',
   titles
+});
+
+export const setFeed = (posts) => ({
+  type: 'SET_FEED',
+  posts
 });

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setCategory } from './actions';
+import { setCategory, setFeed } from './actions';
 import './Feed.css'
 import Post from './Post';
 import connectionHandler from './ConnectionHandler';
@@ -8,14 +8,11 @@ import connectionHandler from './ConnectionHandler';
 class Feed extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      posts: [],
-    }
     this.postsAreAvailable = this.postsAreAvailable.bind(this);
   }
 
   postsAreAvailable(posts) {
-    this.setState({...this.state, posts: posts});
+    this.props.setFeed(posts)
   }
 
   componentWillMount() {
@@ -35,7 +32,7 @@ class Feed extends Component {
   }
 
   render() {
-    const posts = this.state.posts.map(post => {
+    const posts = this.props.feed.map(post => {
       return (
         <Post
           text={post.post_text}
@@ -62,10 +59,12 @@ const mapStateToProps = state => ({
   translation: state.content.translation,
   category: state.content.category,
   titles: state.content.titles,
+  feed: state.content.feed,
 });
 
 const mapDispatchToProps = dispatch => ({
   setCategory: (category) => dispatch(setCategory(category)),
+  setFeed: (posts) => dispatch(setFeed(posts)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

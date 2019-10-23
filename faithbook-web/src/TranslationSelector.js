@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setTranslation } from './actions';
 import connectionHandler from './ConnectionHandler';
-
+import { setActiveTranslation, setTranslations } from './actions';
 
 class TraSelector extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			openOptions: false,
-			translations: [],
 		}
 
 		this.toggleOptions = this.toggleOptions.bind(this);
@@ -48,7 +46,7 @@ class TraSelector extends Component {
 	}
 
 	onSelect(translation) {
-		this.props.setTranslation(translation)
+		this.props.setActiveTranslation(translation)
 	}
 
 	updateSelected(translation) {
@@ -107,7 +105,7 @@ class TraSelector extends Component {
 
 				{this.state.openOptions &&
 					<div ref="flagOptions" style={{fontSize: `${optionsSize}px`}} className={`flag-options ${alignClass}`}>
-						{(this.state.translations).map( translation =>
+						{(this.props.translations).map( translation =>
 							<div className={`flag-option ${this.props.showOptionLabel ? 'has-label' : ''}`} key={translation.abbreviation} tabIndex="0" onClick={() => this.onSelect(translation)}>
 								<span className="country-flag" style={{width: `${optionsSize}px`, height: `${optionsSize}px`}} >
 									<span className="country-label">{ translation.abbreviation + ' - ' + translation.nativeName }</span>
@@ -147,10 +145,12 @@ TraSelector.propTypes = {
 const mapStateToProps = state => ({
   language: state.content.language,
   translation: state.content.translation,
+	translations: state.content.translations,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setTranslation: (translation) => dispatch(setTranslation(translation))
+  setActiveTranslation: (translation) => dispatch(setActiveTranslation(translation)),
+	setTranslations: (translations) => dispatch(setTranslations(translations)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TraSelector);

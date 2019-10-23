@@ -37,14 +37,10 @@ const styles = {
 class SideBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      categories: [],
-    };
     this.categoriesAreAvailable = this.categoriesAreAvailable.bind(this);
   }
 
   categoriesAreAvailable(categories) {
-    this.setState({...this.state, categories: categories});
     this.props.setTitles(categories);
   }
 
@@ -62,10 +58,11 @@ class SideBar extends Component {
 
   render() {
     const { classes, category } = this.props;
-    const items = this.state.categories.map((title, cnt) => {
-      const active = category === title.key;
-      return (
-        <Link to={`/feed/${title.key}`} className={classes.link} key={cnt}>
+    const items = [];
+    Object.keys(this.props.titles).forEach((key, cnt) => {
+      const active = category === key;
+      items.push(
+        <Link to={`/feed/${key}`} className={classes.link} key={cnt}>
           <ListItem button>
             <div
               className={classes.circle}
@@ -74,7 +71,7 @@ class SideBar extends Component {
           <ListItemText
               classes={{primary:classes.listItemText}}
               className={classes.sideListDynamicElement}
-              primary={title.title}
+              primary={this.props.titles[key]}
             />
           </ListItem>
         </Link>
@@ -103,6 +100,7 @@ const mapStateToProps = state => ({
   isSideBarOpen: state.controls.isSideBarOpen,
   language: state.content.language,
   category: state.content.category,
+  titles: state.content.titles,
 });
 
 const mapDispatchToProps = dispatch => ({

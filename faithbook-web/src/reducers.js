@@ -24,8 +24,10 @@ export const content = (
   state = {
     language: '',
     translation: {},
+    translations: [],
     category: '',
     titles: {},
+    feed: [],
   },
   action,
 ) => {
@@ -35,10 +37,15 @@ export const content = (
         ...state,
         language: action.language,
       }
-    case 'SET_TRANSLATION':
+    case 'SET_ACTIVE_TRANSLATION':
       return {
         ...state,
         translation: action.translation,
+      }
+    case 'SET_TRANSLATIONS':
+      return {
+        ...state,
+        translations: action.translations,
       }
     case 'SET_CATEGORY':
       window.scrollTo(0, 0);
@@ -54,6 +61,11 @@ export const content = (
       return {
         ...state,
         titles: titles,
+      }
+    case 'SET_FEED':
+      return {
+        ...state,
+        feed: action.posts,
       }
     default:
       return state;
