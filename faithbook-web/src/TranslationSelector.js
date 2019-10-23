@@ -60,8 +60,8 @@ class TraSelector extends Component {
 	}
 
 	translationsAreAvailable(translations) {
-		this.setState({...this.state, translations: translations});
-		this.props.setTranslation(translations[0]);
+		this.props.setActiveTranslation(translations[0]);
+		this.props.setTranslations(translations);
 	}
 
 	componentWillMount() {
