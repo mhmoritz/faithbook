@@ -31,7 +31,6 @@
   font-weight: normal;
   font-style: italic;
   color: dimgrey;
-  vertical-align: middle;
   font-size: 14px;
 }
 
@@ -72,7 +71,6 @@
 }
 .Panel-text{
   margin-left: 5px;
-  vertical-align: middle;
   font-style: italic;
   font-size: 14px;
 }

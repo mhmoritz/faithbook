@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setTranslation } from './actions';
-import axios from 'axios';
+import connectionHandler from './ConnectionHandler';
+
 
 class TraSelector extends Component {
 	constructor(props){
@@ -15,15 +16,8 @@ class TraSelector extends Component {
 		this.toggleOptions = this.toggleOptions.bind(this);
 		this.closeOptions = this.closeOptions.bind(this);
 		this.onSelect = this.onSelect.bind(this);
+		this.translationsAreAvailable = this.translationsAreAvailable.bind(this);
 	}
-
-	fetchTranslationsFromServer(language) {
-    axios.get(`https://dv2dt9p1r9xgg.cloudfront.net/translations?language=${language}`)
-      .then(response => {
-        this.setState({...this.state, translations: response.data});
-        this.props.setTranslation(response.data[0])
-    });
-  }
 
 	toggleOptions() {
 		!this.state.disabled && this.setState({
@@ -67,14 +61,19 @@ class TraSelector extends Component {
 		!this.props.disabled && window.addEventListener("click", this.closeOptions);
 	}
 
+	translationsAreAvailable(translations) {
+		this.setState({...this.state, translations: translations});
+		this.props.setTranslation(translations[0]);
+	}
+
 	componentWillMount() {
-		this.fetchTranslationsFromServer(this.props.language)
+		connectionHandler.fetchTranslationsFromServer(this.props.language, this.translationsAreAvailable);
 	}
 
 	componentWillReceiveProps(nextProps) {
     let { language } = nextProps;
     if (language !== this.props.language) {
-      this.fetchTranslationsFromServer(language)
+      connectionHandler.fetchTranslationsFromServer(language, this.translationsAreAvailable);
     }
   }
 
