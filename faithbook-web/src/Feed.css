@@ -4,11 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
 .Spinner {
   position: absolute;
-  top: 20vh;
+  top: 150px;
   opacity: 0.5;
 }

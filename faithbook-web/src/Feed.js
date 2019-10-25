@@ -6,7 +6,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 class Feed extends Component {
   render() {
-    const spinner = <CircularProgress className="Spinner" color="inherit" size={100} thickness={2} />;
+    const spinner = <CircularProgress className="Spinner" color="inherit" size={60} thickness={2} />;
     const posts = this.props.isFeedPending ? spinner : this.props.feed.posts.map(post => {
       return (
         <Post
