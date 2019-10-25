@@ -71,13 +71,8 @@ export const content = (
   action,
 ) => {
   switch (action.type) {
-    case 'SET_CATEGORY':
-      window.scrollTo(0, 0);
-      return {
-        ...state,
-        category: action.category,
-      }
     case 'FETCH_INIT_DATA_FULFILLED':
+      window.scrollTo(0, 0);
       return {
         ...state,
         language: action.payload.data.language,
@@ -88,6 +83,7 @@ export const content = (
         category: action.payload.data.feed.id,
       };
     case 'FETCH_FEED_FULFILLED':
+      window.scrollTo(0, 0);
       return {
         ...state,
         category: action.payload.response.data.id,
@@ -95,6 +91,7 @@ export const content = (
         feed: action.payload.response.data,
       };
     case 'FETCH_INIT_LANGUAGE_FULFILLED':
+      window.scrollTo(0, 0);
       return {
         ...state,
         language: action.payload.language,
@@ -102,6 +99,7 @@ export const content = (
         translations: action.payload.response.data.translations,
         translation: action.payload.response.data.translations[0],
         feed: action.payload.response.data.feed,
+        category: action.payload.response.data.feed.id,
       };
     default:
       return state;

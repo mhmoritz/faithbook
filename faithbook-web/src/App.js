@@ -25,9 +25,8 @@ class App extends Component {
             <AppBar />
             <SideBar />
             <Switch>
-              <Redirect exact from="/" to="/feed/daily" />
-              <Redirect exact from="/feed" to="/feed/daily" />
-              <Route exact path='/feed/:category' component={Feed} />
+              <Redirect exact from="/" to="/feed" />
+              <Route exact path='/feed' component={Feed} />
               <Route exact path='/terms' component={Terms} />
               <Route exact path='/privacy' component={Privacy} />
               <Route exact path='/faq' component={FAQ} />

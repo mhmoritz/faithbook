@@ -1,6 +1,5 @@
 import axios from 'axios';
-// const apiEndpoint = 'https://dv2dt9p1r9xgg.cloudfront.net';
-const apiEndpoint = 'http://127.0.0.1:5000';
+const apiEndpoint = 'https://dv2dt9p1r9xgg.cloudfront.net';
 
 export const openSideBar = () => ({
   type: 'OPEN_SIDEBAR',

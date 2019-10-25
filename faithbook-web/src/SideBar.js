@@ -40,7 +40,7 @@ class SideBar extends Component {
     Object.keys(this.props.titles).forEach((key, cnt) => {
       const active = category === key;
       items.push(
-        <Link to={`/feed/${key}`} className={classes.link} key={cnt}>
+        <Link className={classes.link} key={cnt}>
           <ListItem button onClick={() => this.props.setFeed(key, this.props.translation)}>
             <div
               className={classes.circle}
