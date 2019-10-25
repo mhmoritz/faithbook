@@ -1,5 +1,6 @@
 import axios from 'axios';
-const apiEndpoint = 'https://dv2dt9p1r9xgg.cloudfront.net';
+// const apiEndpoint = 'https://dv2dt9p1r9xgg.cloudfront.net';
+const apiEndpoint = 'http://127.0.0.1:5000';
 
 export const openSideBar = () => ({
   type: 'OPEN_SIDEBAR',
@@ -15,8 +16,8 @@ export const fetchInitData = () => ({
 });
 
 export const setLanguage = (language) => ({
-  type: 'FETCH_TRANSLATION_AND_TITLES',
-  payload: axios.get(`${apiEndpoint}/translationsAndTitles?language=${language}`)
+  type: 'FETCH_INIT_LANGUAGE',
+  payload: axios.get(`${apiEndpoint}/initLanguage?language=${language}`)
     .then(response => ({'response': response, 'language': language})),
 });
 

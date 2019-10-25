@@ -2,7 +2,6 @@ export const controls = (
   state = {
     isSideBarOpen: false,
     isFeedPending: true,
-    isSidebarPending: true,
   },
   action,
 ) => {
@@ -21,13 +20,11 @@ export const controls = (
       return {
         ...state,
         isFeedPending: true,
-        isSidebarPending: true,
       };
     case 'FETCH_INIT_DATA_FULFILLED':
       return {
         ...state,
         isFeedPending: false,
-        isSidebarPending: false,
       };
     case 'FETCH_FEED_PENDING':
       return {
@@ -39,15 +36,15 @@ export const controls = (
         ...state,
         isFeedPending: false,
       };
-    case 'FETCH_TRANSLATION_AND_TITLES_PENDING':
+    case 'FETCH_INIT_LANGUAGE_PENDING':
       return {
         ...state,
-        isSidebarPending: true,
+        isFeedPending: true,
       };
-    case 'FETCH_TRANSLATION_AND_TITLES_FULFILLED':
+    case 'FETCH_INIT_LANGUAGE_FULFILLED':
       return {
         ...state,
-        isSidebarPending: false,
+        isFeedPending: false
       };
     default:
       return state;
@@ -97,13 +94,14 @@ export const content = (
         translation: action.payload.translation,
         feed: action.payload.response.data,
       };
-    case 'FETCH_TRANSLATION_AND_TITLES_FULFILLED':
+    case 'FETCH_INIT_LANGUAGE_FULFILLED':
       return {
         ...state,
         language: action.payload.language,
         titles: convertTitles(action.payload.response.data.titles),
         translations: action.payload.response.data.translations,
         translation: action.payload.response.data.translations[0],
+        feed: action.payload.response.data.feed,
       };
     default:
       return state;
