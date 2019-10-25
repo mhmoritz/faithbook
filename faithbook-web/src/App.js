@@ -7,9 +7,6 @@ import Footer from './Footer.js';
 import {Terms, Privacy, FAQ, ManageConsent} from "./Legals.js";
 import AppBar from './AppBar';
 import SideBar from './SideBar';
-import connectionHandler from './ConnectionHandler';
-import { setLanguage } from './actions';
-import { connect } from 'react-redux';
 
 const theme = createMuiTheme({
   props: {
@@ -20,11 +17,6 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
-
-  componentWillMount() {
-    connectionHandler.fetchUserLanguage(this.props.setLanguage);
-  }
-
   render() {
     return (
       <Router>
@@ -49,8 +41,4 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  setLanguage: (language) => dispatch(setLanguage(language)),
-});
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;

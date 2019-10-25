@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import connectionHandler from './ConnectionHandler';
-import { setActiveTranslation, setTranslations } from './actions';
+import { setFeed } from './actions';
 
 class TraSelector extends Component {
 	constructor(props){
@@ -14,7 +13,6 @@ class TraSelector extends Component {
 		this.toggleOptions = this.toggleOptions.bind(this);
 		this.closeOptions = this.closeOptions.bind(this);
 		this.onSelect = this.onSelect.bind(this);
-		this.translationsAreAvailable = this.translationsAreAvailable.bind(this);
 	}
 
 	toggleOptions() {
@@ -46,7 +44,7 @@ class TraSelector extends Component {
 	}
 
 	onSelect(translation) {
-		this.props.setActiveTranslation(translation)
+		this.props.setFeed(this.props.category, translation)
 	}
 
 	updateSelected(translation) {
@@ -58,22 +56,6 @@ class TraSelector extends Component {
 	componentDidMount() {
 		!this.props.disabled && window.addEventListener("click", this.closeOptions);
 	}
-
-	translationsAreAvailable(translations) {
-		this.props.setActiveTranslation(translations[0]);
-		this.props.setTranslations(translations);
-	}
-
-	componentWillMount() {
-		connectionHandler.fetchTranslationsFromServer(this.props.language, this.translationsAreAvailable);
-	}
-
-	componentWillReceiveProps(nextProps) {
-    let { language } = nextProps;
-    if (language !== this.props.language) {
-      connectionHandler.fetchTranslationsFromServer(language, this.translationsAreAvailable);
-    }
-  }
 
 	componentWillUnmount() {
 		!this.props.disabled && window.removeEventListener("click", this.closeOptions);
@@ -143,14 +125,13 @@ TraSelector.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  language: state.content.language,
+  category: state.content.category,
   translation: state.content.translation,
 	translations: state.content.translations,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setActiveTranslation: (translation) => dispatch(setActiveTranslation(translation)),
-	setTranslations: (translations) => dispatch(setTranslations(translations)),
+  setFeed: (category, translation) => dispatch(setFeed(category, translation)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TraSelector);
