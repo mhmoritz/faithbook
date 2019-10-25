@@ -4,11 +4,18 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { controls, content } from './reducers';
-import { createStore, combineReducers } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware'
 import * as serviceWorker from './serviceWorker';
+import { fetchInitData } from './actions';
 
 const rootReducer = combineReducers({controls: controls, content: content})
-export const store = createStore(rootReducer);
+const middleware = applyMiddleware(promise, thunk, logger);
+export const store = createStore(rootReducer, middleware);
+
+store.dispatch(fetchInitData());
 
 ReactDOM.render(
   React.createElement(Provider, { store }, React.createElement(App)),

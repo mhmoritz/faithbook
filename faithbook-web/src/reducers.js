@@ -1,6 +1,8 @@
 export const controls = (
   state = {
     isSideBarOpen: false,
+    isFeedPending: true,
+    isSidebarPending: true,
   },
   action,
 ) => {
@@ -15,10 +17,50 @@ export const controls = (
         ...state,
         isSideBarOpen: false,
       };
+    case 'FETCH_INIT_DATA_PENDING':
+      return {
+        ...state,
+        isFeedPending: true,
+        isSidebarPending: true,
+      };
+    case 'FETCH_INIT_DATA_FULFILLED':
+      return {
+        ...state,
+        isFeedPending: false,
+        isSidebarPending: false,
+      };
+    case 'FETCH_FEED_PENDING':
+      return {
+        ...state,
+        isFeedPending: true,
+      };
+    case 'FETCH_FEED_FULFILLED':
+      return {
+        ...state,
+        isFeedPending: false,
+      };
+    case 'FETCH_TRANSLATION_AND_TITLES_PENDING':
+      return {
+        ...state,
+        isSidebarPending: true,
+      };
+    case 'FETCH_TRANSLATION_AND_TITLES_FULFILLED':
+      return {
+        ...state,
+        isSidebarPending: false,
+      };
     default:
       return state;
   }
 };
+
+function convertTitles(titles) {
+  let asDict = {};
+  const entries = titles.forEach(entry => {
+    asDict[entry.key] = entry.title;
+  });
+  return asDict;
+}
 
 export const content = (
   state = {
@@ -32,41 +74,37 @@ export const content = (
   action,
 ) => {
   switch (action.type) {
-    case 'SET_LANGUAGE':
-      return {
-        ...state,
-        language: action.language,
-      }
-    case 'SET_ACTIVE_TRANSLATION':
-      return {
-        ...state,
-        translation: action.translation,
-      }
-    case 'SET_TRANSLATIONS':
-      return {
-        ...state,
-        translations: action.translations,
-      }
     case 'SET_CATEGORY':
       window.scrollTo(0, 0);
       return {
         ...state,
         category: action.category,
       }
-    case 'SET_TITLES':
-      let titles = {};
-      const entries = action.titles.forEach(entry => {
-        titles[entry.key] = entry.title;
-      });
+    case 'FETCH_INIT_DATA_FULFILLED':
       return {
         ...state,
-        titles: titles,
-      }
-    case 'SET_FEED':
+        language: action.payload.data.language,
+        translations: action.payload.data.translations,
+        translation: action.payload.data.translations[0],
+        titles: convertTitles(action.payload.data.titles),
+        feed: action.payload.data.feed,
+        category: action.payload.data.feed.id,
+      };
+    case 'FETCH_FEED_FULFILLED':
       return {
         ...state,
-        feed: action.posts,
-      }
+        category: action.payload.response.data.id,
+        translation: action.payload.translation,
+        feed: action.payload.response.data,
+      };
+    case 'FETCH_TRANSLATION_AND_TITLES_FULFILLED':
+      return {
+        ...state,
+        language: action.payload.language,
+        titles: convertTitles(action.payload.response.data.titles),
+        translations: action.payload.response.data.translations,
+        translation: action.payload.response.data.translations[0],
+      };
     default:
       return state;
   }

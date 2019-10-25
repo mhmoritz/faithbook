@@ -1,3 +1,6 @@
+import axios from 'axios';
+const apiEndpoint = 'https://dv2dt9p1r9xgg.cloudfront.net';
+
 export const openSideBar = () => ({
   type: 'OPEN_SIDEBAR',
 });
@@ -6,32 +9,20 @@ export const closeSideBar = () => ({
   type: 'CLOSE_SIDEBAR',
 });
 
+export const fetchInitData = () => ({
+  type: 'FETCH_INIT_DATA',
+  payload: axios.get(`${apiEndpoint}/init`),
+});
+
 export const setLanguage = (language) => ({
-  type: 'SET_LANGUAGE',
-  language
+  type: 'FETCH_TRANSLATION_AND_TITLES',
+  payload: axios.get(`${apiEndpoint}/translationsAndTitles?language=${language}`)
+    .then(response => ({'response': response, 'language': language})),
 });
 
-export const setActiveTranslation = (translation) => ({
-  type: 'SET_ACTIVE_TRANSLATION',
-  translation
-});
-
-export const setTranslations = (translations) => ({
-  type: 'SET_TRANSLATIONS',
-  translations
-});
-
-export const setCategory = (category) => ({
-  type: 'SET_CATEGORY',
-  category
-});
-
-export const setTitles = (titles) => ({
-  type: 'SET_TITLES',
-  titles
-});
-
-export const setFeed = (posts) => ({
-  type: 'SET_FEED',
-  posts
+export const setFeed = (category, translation) => ({
+  type: 'FETCH_FEED',
+  translation: translation,
+  payload: axios.get(`${apiEndpoint}/feed?category=${category}&translation=${translation.abbreviation}`)
+    .then(response => ({'response': response, 'category': category, 'translation': translation})),
 });
