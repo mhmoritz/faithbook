@@ -14,18 +14,6 @@
   display: block;
 }
 
-.Profile-img {
-  border-radius: 30px;
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
-  display: inline-block;
-  vertical-align: middle;
-  border-style: double;
-  border-width: thin;
-  border-color: rgba(5,5,5,0.21);
-}
-
 .Post-credit{
   text-decoration: underline;
   font-weight: normal;
@@ -48,7 +36,7 @@
   position: relative;
   top: 50%;
   left: 50%;
-  font-size: 140%;
+  font-size: 130%;
   color: white;
   padding: 10px;
   transform: translate(-50%,-50%);

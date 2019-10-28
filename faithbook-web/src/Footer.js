@@ -11,8 +11,9 @@ const Footer = () => {
         <NavLink to= "/privacy" className="StdLinkText"> Privacy </NavLink> &ensp;
         <NavLink to= "/faq" className="StdLinkText"> FAQ </NavLink> &ensp;
         <NavLink to= "/manageconsent" className="StdLinkText"> Manage Consent </NavLink> &ensp;
-        <s className='StdLinkText'>FAITHBOOK &#169; 2019</s>
+        <br/>
       </a>
+      <span className='Copyright'>FAITHBOOK &#169; 2019</span>
     </div>
   );
 }

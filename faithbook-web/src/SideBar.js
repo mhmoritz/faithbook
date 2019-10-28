@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { closeSideBar, setTitles } from './actions';
+import { closeSideBar, setFeed } from './actions';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -9,7 +9,6 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { NavLink } from 'react-router-dom';
-import connectionHandler from './ConnectionHandler';
 
 const styles = {
   sideList: {
@@ -35,38 +34,14 @@ const styles = {
 };
 
 class SideBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: [],
-    };
-    this.categoriesAreAvailable = this.categoriesAreAvailable.bind(this);
-  }
-
-  categoriesAreAvailable(categories) {
-    this.setState({...this.state, categories: categories});
-    this.props.setTitles(categories);
-  }
-
-  componentDidMount() {
-    const { language } = this.props;
-    connectionHandler.fetchDisplayNamesFromServer(language, this.categoriesAreAvailable);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const wasLanguageChanged = nextProps.language !== this.props.language;
-    if (wasLanguageChanged) {
-      connectionHandler.fetchDisplayNamesFromServer(nextProps.language, this.categoriesAreAvailable);
-    }
-  }
-
   render() {
     const { classes, category } = this.props;
-    const items = this.state.categories.map((title, cnt) => {
-      const active = category === title.key;
-      return (
-        <Link to={`/feed/${title.key}`} className={classes.link} key={cnt}>
-          <ListItem button>
+    const items = [];
+    Object.keys(this.props.titles).forEach((key, cnt) => {
+      const active = category === key;
+      items.push(
+        <Link to="/feed" className={classes.link} key={cnt}>
+          <ListItem button onClick={() => this.props.setFeed(key, this.props.translation)}>
             <div
               className={classes.circle}
               style={{visibility: active ? "visible" : "hidden"}}
@@ -74,7 +49,7 @@ class SideBar extends Component {
           <ListItemText
               classes={{primary:classes.listItemText}}
               className={classes.sideListDynamicElement}
-              primary={title.title}
+              primary={this.props.titles[key]}
             />
           </ListItem>
         </Link>
@@ -101,13 +76,14 @@ class SideBar extends Component {
 
 const mapStateToProps = state => ({
   isSideBarOpen: state.controls.isSideBarOpen,
-  language: state.content.language,
   category: state.content.category,
+  titles: state.content.titles,
+  translation: state.content.translation,
 });
 
 const mapDispatchToProps = dispatch => ({
   closeSideBar: () => dispatch(closeSideBar()),
-  setTitles: (titles) => dispatch(setTitles(titles)),
+  setFeed: (category, translation) => dispatch(setFeed(category, translation)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(SideBar));

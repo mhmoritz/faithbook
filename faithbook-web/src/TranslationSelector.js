@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setTranslation } from './actions';
-import connectionHandler from './ConnectionHandler';
-
+import { setFeed } from './actions';
 
 class TraSelector extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			openOptions: false,
-			translations: [],
 		}
 
 		this.toggleOptions = this.toggleOptions.bind(this);
 		this.closeOptions = this.closeOptions.bind(this);
 		this.onSelect = this.onSelect.bind(this);
-		this.translationsAreAvailable = this.translationsAreAvailable.bind(this);
 	}
 
 	toggleOptions() {
@@ -48,7 +44,7 @@ class TraSelector extends Component {
 	}
 
 	onSelect(translation) {
-		this.props.setTranslation(translation)
+		this.props.setFeed(this.props.category, translation)
 	}
 
 	updateSelected(translation) {
@@ -60,22 +56,6 @@ class TraSelector extends Component {
 	componentDidMount() {
 		!this.props.disabled && window.addEventListener("click", this.closeOptions);
 	}
-
-	translationsAreAvailable(translations) {
-		this.setState({...this.state, translations: translations});
-		this.props.setTranslation(translations[0]);
-	}
-
-	componentWillMount() {
-		connectionHandler.fetchTranslationsFromServer(this.props.language, this.translationsAreAvailable);
-	}
-
-	componentWillReceiveProps(nextProps) {
-    let { language } = nextProps;
-    if (language !== this.props.language) {
-      connectionHandler.fetchTranslationsFromServer(language, this.translationsAreAvailable);
-    }
-  }
 
 	componentWillUnmount() {
 		!this.props.disabled && window.removeEventListener("click", this.closeOptions);
@@ -107,7 +87,7 @@ class TraSelector extends Component {
 
 				{this.state.openOptions &&
 					<div ref="flagOptions" style={{fontSize: `${optionsSize}px`}} className={`flag-options ${alignClass}`}>
-						{(this.state.translations).map( translation =>
+						{(this.props.translations).map( translation =>
 							<div className={`flag-option ${this.props.showOptionLabel ? 'has-label' : ''}`} key={translation.abbreviation} tabIndex="0" onClick={() => this.onSelect(translation)}>
 								<span className="country-flag" style={{width: `${optionsSize}px`, height: `${optionsSize}px`}} >
 									<span className="country-label">{ translation.abbreviation + ' - ' + translation.nativeName }</span>
@@ -145,12 +125,13 @@ TraSelector.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  language: state.content.language,
+  category: state.content.category,
   translation: state.content.translation,
+	translations: state.content.translations,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setTranslation: (translation) => dispatch(setTranslation(translation))
+  setFeed: (category, translation) => dispatch(setFeed(category, translation)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TraSelector);

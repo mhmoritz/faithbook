@@ -1,41 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setCategory } from './actions';
 import './Feed.css'
 import Post from './Post';
-import connectionHandler from './ConnectionHandler';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class Feed extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-    }
-    this.postsAreAvailable = this.postsAreAvailable.bind(this);
-  }
-
-  postsAreAvailable(posts) {
-    this.setState({...this.state, posts: posts});
-  }
-
-  componentWillMount() {
-    let { category } = this.props.match.params;
-    connectionHandler.fetchFeedFromServer(category, this.props.language, this.props.translation.abbreviation, this.postsAreAvailable);
-  }
-
-
-  componentWillReceiveProps(nextProps) {
-    let { category } = nextProps.match.params;
-    const wasCategoryChanged = category !== this.props.category;
-    const wasTranslationChanged = nextProps.translation.abbreviation !== this.props.translation.abbreviation;
-    if (wasCategoryChanged || wasTranslationChanged) {
-      connectionHandler.fetchFeedFromServer(category, nextProps.language, nextProps.translation.abbreviation, this.postsAreAvailable);
-    }
-    this.props.setCategory(category);
-  }
-
   render() {
-    const posts = this.state.posts.map(post => {
+    const spinner = <CircularProgress className="Spinner" color="inherit" size={60} thickness={2} />;
+    const posts = this.props.isFeedPending ? spinner : this.props.feed.posts.map(post => {
       return (
         <Post
           text={post.post_text}
@@ -58,14 +30,10 @@ class Feed extends Component {
 }
 
 const mapStateToProps = state => ({
-  language: state.content.language,
   translation: state.content.translation,
-  category: state.content.category,
+  feed: state.content.feed,
   titles: state.content.titles,
+  isFeedPending: state.controls.isFeedPending,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCategory: (category) => dispatch(setCategory(category)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps)(Feed);
