@@ -1,7 +1,35 @@
 .Legals{
-  padding-top: 100px;
-  padding-bottom: 20px;
-  font-size: 30px;
-  font-weight: 5px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: #777777;
+  letter-spacing: 0.7px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.Headline {
   color: Black;
+  font-weight: 40;
+  letter-spacing: 0px;
+}
+
+.Title {
+  color: Black;
+  letter-spacing: 0px;
+  white-space: pre-wrap;
+  text-align: center;
+  font-size: 70px;
+  font-weight: 45;
+}
+
+strong {
+  color: #444444;
+  font-weight: 550;
 }
