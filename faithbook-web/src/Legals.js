@@ -1,20 +1,20 @@
 import React from 'react';
 import "./Legals.css";
 
-export const Terms =() => {
+export const Terms = () => {
   return (
     <div className="Legals">
-      Terms
+      <h1 className="Title">Terms</h1>
     </div>
   );
 }
-export const Privacy =() => {
+export const Privacy = () => {
   return (
     <div className="Legals">
       <h1 className="Title">Privacy Policy</h1>
         <div>
           <p><strong>Last Modified:</strong>&nbsp;October 22, 2019</p>
-          <p>BibleFeed Ltd. is a media company. &nbsp;Our mission is to inspire the world by values.</p>
+          <p>BibleFeed Ltd. is a media company. &nbsp;Our mission is to inspire the world with values.</p>
           <p>The services that link to this Privacy Policy provide values and inspirations for all kind of aspects of human life.</p>
           <p>When you use these services, you’ll share some information with us. We want to explain clearly what information we collect, why we collect it, how we use it, whom we share it with, and the controls we give you to access, update, and delete your information.</p>
           <p>That’s why we’ve written this Privacy Policy. We tried to write it in simple language with minimal legalese so it’s easy for you to understand. If you have any questions about anything in our Privacy Policy, please <a href="#!">contact us</a>.&nbsp;</p>
@@ -149,17 +149,17 @@ export const Privacy =() => {
     </div>
   );
 }
-export const FAQ =() => {
+export const FAQ = () => {
   return (
     <div className="Legals">
-      FAQ
+      <h1 className="Title">FAQ</h1>
     </div>
   );
 }
-export const ManageConsent =() => {
+export const ManageConsent = () => {
   return (
     <div className="Legals">
-      Manage Consent
+      <h1 className="Title">Consent</h1>
     </div>
   );
 }
