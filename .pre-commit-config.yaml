@@ -24,7 +24,7 @@ repos:
     hooks:
     - id: eslint
       entry: eslint --fix
-      files: ^frontend/react-client/.*\.(js|jsx)$
+      files: ^.*\.(js|jsx)$
       types: [text]
       additional_dependencies:
       - eslint@5.3.0
