@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const apiEndpoint = 'https://dv2dt9p1r9xgg.cloudfront.net';
 
 export const openSideBar = () => ({
@@ -14,15 +15,15 @@ export const fetchInitData = () => ({
   payload: axios.get(`${apiEndpoint}/init`),
 });
 
-export const setLanguage = (language) => ({
+export const setLanguage = language => ({
   type: 'FETCH_INIT_LANGUAGE',
   payload: axios.get(`${apiEndpoint}/initLanguage?language=${language}`)
-    .then(response => ({'response': response, 'language': language})),
+    .then(response => ({ response, language })),
 });
 
 export const setFeed = (category, translation) => ({
   type: 'FETCH_FEED',
-  translation: translation,
+  translation,
   payload: axios.get(`${apiEndpoint}/feed?category=${category}&translation=${translation.abbreviation}`)
-    .then(response => ({'response': response, 'category': category, 'translation': translation})),
+    .then(response => ({ response, category, translation })),
 });

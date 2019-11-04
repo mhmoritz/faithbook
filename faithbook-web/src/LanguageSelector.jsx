@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setLanguage } from './actions';
+import PropTypes from 'prop-types';
 import ReactFlagsSelect from 'react-flags-select';
+import { setLanguage } from './actions';
 import 'react-flags-select/css/react-flags-select.css';
 
 class LanguageSelector extends Component {
@@ -10,13 +11,15 @@ class LanguageSelector extends Component {
     this.flagSelector = React.createRef();
   }
 
-  onSelectLanguage = (countryCode) => {
-    let language = countryCode.toLowerCase()
-    this.props.setLanguage(language);
+  componentWillReceiveProps(nextProps) {
+    const { language } = nextProps;
+    this.flagSelector.current.updateSelected(language.toUpperCase());
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.flagSelector.current.updateSelected(nextProps.language.toUpperCase());
+  onSelectLanguage = (countryCode) => {
+    const { setLanguage } = this.props;
+    const language = countryCode.toLowerCase();
+    setLanguage(language);
   }
 
   render() {
@@ -30,13 +33,13 @@ class LanguageSelector extends Component {
           defaultCountry="US"
           showSelectedLabel={false}
           alignOptions="left"
-          countries={["US", "PT", "ES", "DE", "FR"]}
+          countries={['US', 'PT', 'ES', 'DE', 'FR']}
           customLabels={{
-            "US": "English",
-            "PT": "Português",
-            "ES": "Español",
-            "DE": "Deutsch",
-            "FR": "Français",
+            US: 'English',
+            PT: 'Português',
+            ES: 'Español',
+            DE: 'Deutsch',
+            FR: 'Français',
           }}
           onSelect={this.onSelectLanguage}
         />
@@ -50,7 +53,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setLanguage: (language) => dispatch(setLanguage(language))
+  setLanguage: language => dispatch(setLanguage(language)),
 });
+
+LanguageSelector.propTypes = {
+  language: PropTypes.string.isRequired,
+  setLanguage: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(LanguageSelector);
