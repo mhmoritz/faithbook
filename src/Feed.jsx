@@ -9,7 +9,7 @@ const Feed = ({
   feed, titles, isFeedPending,
 }) => {
   const spinner = <CircularProgress className="Spinner" color="inherit" size={60} thickness={2} />;
-  const posts = isFeedPending ? spinner : feed.posts.map(post => (
+  const content = isFeedPending ? spinner : feed.posts.map(post => (
     <Post
       text={post.post_text}
       source={post.post_source}
@@ -24,7 +24,7 @@ const Feed = ({
   ));
   return (
     <div className="Feed">
-      {posts}
+      {content}
     </div>
   );
 };
