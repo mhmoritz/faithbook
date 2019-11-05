@@ -46,6 +46,11 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
