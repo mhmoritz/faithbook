@@ -69,6 +69,6 @@
   padding: 4px;
   right: 10px;
   color: white;
-  vertical-align: middle;
   font-size: 14px;
+  transform: translate(3%,-9%);
 }

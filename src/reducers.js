@@ -44,7 +44,7 @@ export const controls = (
     case 'FETCH_INIT_LANGUAGE_FULFILLED':
       return {
         ...state,
-        isFeedPending: false
+        isFeedPending: false,
       };
     default:
       return state;
@@ -52,8 +52,8 @@ export const controls = (
 };
 
 function convertTitles(titles) {
-  let asDict = {};
-  const entries = titles.forEach(entry => {
+  const asDict = {};
+  titles.forEach((entry) => {
     asDict[entry.key] = entry.title;
   });
   return asDict;
@@ -62,11 +62,11 @@ function convertTitles(titles) {
 export const content = (
   state = {
     language: '',
-    translation: {},
+    translation: { abbreviation: 'ESV' },
     translations: [],
     category: '',
     titles: {},
-    feed: [],
+    feed: {},
   },
   action,
 ) => {
@@ -104,4 +104,4 @@ export const content = (
     default:
       return state;
   }
-}
+};
