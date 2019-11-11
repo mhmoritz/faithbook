@@ -36,7 +36,7 @@ const styles = {
   logoImage: {
     width: '90px',
     height: 'auto',
-    opacity: 0.7,
+    opacity: 0.8,
     marginLeft: 10,
   },
   toolBar: {
