@@ -12,3 +12,23 @@
   top: 150px;
   opacity: 0.5;
 }
+
+.ErrorBox {
+  position: absolute;
+  top: 150px;
+  width: 50%;
+  margin: auto;
+  background-color: #F2F2F2;
+  text-align: center;
+  padding: 0 10px;
+  box-shadow: 10px 10px 12px 0px rgba(184,180,184,0.8);
+
+}
+
+.ErrorSymbol {
+  margin: 20px auto 15px;
+}
+
+.ErrorMessage {
+  margin: 0 auto 25px;
+}

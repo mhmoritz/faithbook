@@ -2,6 +2,7 @@ export const controls = (
   state = {
     isSideBarOpen: false,
     isFeedPending: true,
+    hasRequestFailed: false,
   },
   action,
 ) => {
@@ -26,6 +27,12 @@ export const controls = (
         ...state,
         isFeedPending: false,
       };
+    case 'FETCH_INIT_DATA_REJECTED':
+      return {
+        ...state,
+        isFeedPending: false,
+        hasRequestFailed: true,
+      };
     case 'FETCH_FEED_PENDING':
       return {
         ...state,
@@ -36,6 +43,12 @@ export const controls = (
         ...state,
         isFeedPending: false,
       };
+    case 'FETCH_FEED_REJECTED':
+      return {
+        ...state,
+        isFeedPending: false,
+        hasRequestFailed: true,
+      };
     case 'FETCH_INIT_LANGUAGE_PENDING':
       return {
         ...state,
@@ -45,6 +58,12 @@ export const controls = (
       return {
         ...state,
         isFeedPending: false,
+      };
+    case 'FETCH_INIT_LANGUAGE_REJECTED':
+      return {
+        ...state,
+        isFeedPending: false,
+        hasRequestFailed: true,
       };
     default:
       return state;
