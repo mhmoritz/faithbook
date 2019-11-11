@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint --ext .js --ext .jsx src",
     "lint-fix": "eslint --ext .js --ext .jsx --fix src",
