@@ -11,48 +11,48 @@ const Post = ({
   text, source, link, author, image, altText, category,
 }) => (
   <div className="Post">
-    <LazyLoad offset={1000}>
-      <Card>
-        <CardActionArea>
+    <Card>
+      <CardActionArea>
+        <LazyLoad height={584} offset={1400}>
           <CardMedia
             component="img"
             alt={altText}
             image={image}
           />
-          <div className="Overlay">
-            <div className="Overlay-Text">{text}</div>
-            <div className="Overlay-Source">{source}</div>
-          </div>
-        </CardActionArea>
-        <CardActions className="Panel">
-          <div>
-            <span className="Panel-text">
-              Photo by&nbsp;
-              <a
-                className="Post-credit"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {author}
-              </a>
-              &nbsp;on&nbsp;
-              <a
-                className="Post-credit"
-                href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {'Unsplash'}
-              </a>
-            </span>
-            <span className="Breadcrumb" style={{ backgroundColor: '#aaaaaadd' }}>
-              {category}
-            </span>
-          </div>
-        </CardActions>
-      </Card>
-    </LazyLoad>
+        </LazyLoad>
+        <div className="Overlay">
+          <div className="Overlay-Text">{text}</div>
+          <div className="Overlay-Source">{source}</div>
+        </div>
+      </CardActionArea>
+      <CardActions className="Panel">
+        <div>
+          <span className="Panel-text">
+            Photo by&nbsp;
+            <a
+              className="Post-credit"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {author}
+            </a>
+            &nbsp;on&nbsp;
+            <a
+              className="Post-credit"
+              href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {'Unsplash'}
+            </a>
+          </span>
+          <span className="Breadcrumb" style={{ backgroundColor: '#aaaaaadd' }}>
+            {category}
+          </span>
+        </div>
+      </CardActions>
+    </Card>
   </div>
 );
 
