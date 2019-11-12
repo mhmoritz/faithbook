@@ -19,11 +19,7 @@
   width: 70%;
   max-width: 500px;
   margin: auto;
-  background-color: #FAFAFA;
   text-align: center;
-  padding: 0 10px;
-  box-shadow: 10px 10px 12px 0px rgba(184,180,184,0.5);
-
 }
 
 .ErrorSymbol {
