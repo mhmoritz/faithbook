@@ -21,11 +21,13 @@ export const controls = (
       return {
         ...state,
         isFeedPending: true,
+        hasRequestFailed: false,
       };
     case 'FETCH_INIT_DATA_FULFILLED':
       return {
         ...state,
         isFeedPending: false,
+        hasRequestFailed: false,
       };
     case 'FETCH_INIT_DATA_REJECTED':
       return {
@@ -37,11 +39,13 @@ export const controls = (
       return {
         ...state,
         isFeedPending: true,
+        hasRequestFailed: false,
       };
     case 'FETCH_FEED_FULFILLED':
       return {
         ...state,
         isFeedPending: false,
+        hasRequestFailed: false,
       };
     case 'FETCH_FEED_REJECTED':
       return {
@@ -53,11 +57,13 @@ export const controls = (
       return {
         ...state,
         isFeedPending: true,
+        hasRequestFailed: false,
       };
     case 'FETCH_INIT_LANGUAGE_FULFILLED':
       return {
         ...state,
         isFeedPending: false,
+        hasRequestFailed: false,
       };
     case 'FETCH_INIT_LANGUAGE_REJECTED':
       return {
