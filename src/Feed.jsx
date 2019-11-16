@@ -16,7 +16,7 @@ const Feed = ({
       <div className="ErrorMessage">
         There was a problem with your request.
         <br />
-        Please make sure your device has has access to the internet.
+        Please make sure your device has access to the internet.
       </div>
     </div>
   );
