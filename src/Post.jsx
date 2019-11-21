@@ -13,7 +13,7 @@ const Post = ({
   <div className="Post">
     <Card>
       <CardActionArea>
-        <LazyLoad height={584} offset={1400}>
+        <LazyLoad offset={1500}>
           <CardMedia
             component="img"
             alt={altText}
@@ -47,7 +47,7 @@ const Post = ({
               {'Unsplash'}
             </a>
           </span>
-          <span className="Breadcrumb" style={{ backgroundColor: '#aaaaaadd' }}>
+          <span className="Breadcrumb">
             {category}
           </span>
         </div>

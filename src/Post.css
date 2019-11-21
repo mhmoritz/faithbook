@@ -57,7 +57,7 @@
 .Panel {
   height: 40px;
 }
-.Panel-text{
+.Panel-text {
   margin-left: 5px;
   font-style: italic;
   font-size: 14px;
@@ -71,4 +71,13 @@
   color: white;
   font-size: 14px;
   transform: translate(3%,-9%);
+  background-color: #aaaaaadd;
+}
+
+.LazyLoad {
+  height: 500px;
+}
+
+.LazyLoad.is-visible {
+  height: auto;
 }
