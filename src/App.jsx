@@ -6,9 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
 import Feed from './Feed';
 import Footer from './Footer';
-import {
-  Terms, Privacy, FAQ, ManageConsent,
-} from './Legals';
+import { Terms, Privacy } from './Legals';
 import AppBar from './AppBar';
 import SideBar from './SideBar';
 
@@ -34,8 +32,6 @@ const App = () => (
           <Route exact path="/feed" component={Feed} />
           <Route exact path="/terms" component={Terms} />
           <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/faq" component={FAQ} />
-          <Route exact path="/manageconsent" component={ManageConsent} />
         </Switch>
         <Footer />
       </div>

@@ -305,13 +305,3 @@ export const Privacy = () => (
     </div>
   </div>
 );
-export const FAQ = () => (
-  <div className="Legals">
-    <h1 className="Title">FAQ</h1>
-  </div>
-);
-export const ManageConsent = () => (
-  <div className="Legals">
-    <h1 className="Title">Consent</h1>
-  </div>
-);
