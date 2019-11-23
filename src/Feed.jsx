@@ -12,7 +12,7 @@ const Feed = ({
   const spinner = <CircularProgress className="Spinner" color="inherit" size={60} thickness={2} />;
   const error = (
     <div className="ErrorBox">
-      <Error className="ErrorSymbol" />
+      <Error className="ErrorSymbol" style={{ width: 25, height: 25 }} />
       <div className="ErrorMessage">
         There was a problem with your request.
         <br />
