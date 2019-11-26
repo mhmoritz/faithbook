@@ -34,10 +34,9 @@ const styles = {
     marginRight: 100,
   },
   logoImage: {
-    width: '90px',
+    width: '85px',
     height: 'auto',
     opacity: 0.8,
-    marginLeft: 10,
   },
   toolBar: {
     width: '100%',
