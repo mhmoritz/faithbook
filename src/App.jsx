@@ -21,6 +21,10 @@ const theme = createMuiTheme({
   },
 });
 
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
+
 const App = () => (
   <Router>
     <MuiThemeProvider theme={theme}>
@@ -29,9 +33,30 @@ const App = () => (
         <SideBar />
         <Switch>
           <Redirect exact from="/" to="/feed" />
-          <Route exact path="/feed" component={Feed} />
-          <Route exact path="/terms" component={Terms} />
-          <Route exact path="/privacy" component={Privacy} />
+          <Route
+            exact
+            path="/feed"
+            render={() => {
+              scrollToTop();
+              return <Feed />;
+            }}
+          />
+          <Route
+            exact
+            path="/terms"
+            render={() => {
+              scrollToTop();
+              return <Terms />;
+            }}
+          />
+          <Route
+            exact
+            path="/privacy"
+            render={() => {
+              scrollToTop();
+              return <Privacy />;
+            }}
+          />
         </Switch>
         <Footer />
       </div>
