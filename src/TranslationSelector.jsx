@@ -51,7 +51,7 @@ class TranslationSelector extends Component {
     const { openOptions } = this.state;
 
     return (
-      <div className="flag-select" style={{ marginTop: '6px' }}>
+      <div className="flag-select" style={{ paddingBottom: 0 }}>
         <div
           ref={this.selectedTranslation}
           style={{ fontSize: `${selectedSize}px` }}

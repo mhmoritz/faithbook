@@ -24,26 +24,24 @@ class LanguageSelector extends Component {
 
   render() {
     return (
-      <div className={null}>
-        <ReactFlagsSelect
-          ref={this.flagSelector}
-          disabled={false}
-          selectedSize={16}
-          optionsSize={16}
-          defaultCountry="US"
-          showSelectedLabel={false}
-          alignOptions="left"
-          countries={['US', 'PT', 'ES', 'DE', 'FR']}
-          customLabels={{
-            US: 'English',
-            PT: 'Português',
-            ES: 'Español',
-            DE: 'Deutsch',
-            FR: 'Français',
-          }}
-          onSelect={this.onSelectLanguage}
-        />
-      </div>
+      <ReactFlagsSelect
+        ref={this.flagSelector}
+        disabled={false}
+        selectedSize={16}
+        optionsSize={16}
+        defaultCountry="US"
+        showSelectedLabel={false}
+        alignOptions="left"
+        countries={['US', 'PT', 'ES', 'DE', 'FR']}
+        customLabels={{
+          US: 'English',
+          PT: 'Português',
+          ES: 'Español',
+          DE: 'Deutsch',
+          FR: 'Français',
+        }}
+        onSelect={this.onSelectLanguage}
+      />
     );
   }
 }
