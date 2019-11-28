@@ -3,7 +3,7 @@ import './Legals.css';
 
 export const Terms = () => (
   <div className="Legals">
-    <h1 className="Title">Terms of Use</h1>
+    <h1 className="Title">Terms</h1>
     <div>
       <h2 className="Headline">1. Introduction</h2>
       <p>
