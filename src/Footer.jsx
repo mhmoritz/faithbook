@@ -12,15 +12,8 @@ const Footer = () => (
       <NavLink to="/privacy" className="StdLinkText"> Privacy </NavLink>
       {' '}
       &ensp;
-      <NavLink to="/faq" className="StdLinkText"> FAQ </NavLink>
-      {' '}
-      &ensp;
-      <NavLink to="/manageconsent" className="StdLinkText"> Manage Consent </NavLink>
-      {' '}
-      &ensp;
-      <br />
     </span>
-    <span className="Copyright">FAITHBOOK &#169; 2019</span>
+    <span className="StdLinkText">BibleFeed &#169; 2019</span>
   </div>
 );
 export default Footer;

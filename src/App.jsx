@@ -6,9 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
 import Feed from './Feed';
 import Footer from './Footer';
-import {
-  Terms, Privacy, FAQ, ManageConsent,
-} from './Legals';
+import { Terms, Privacy } from './Legals';
 import AppBar from './AppBar';
 import SideBar from './SideBar';
 
@@ -23,6 +21,10 @@ const theme = createMuiTheme({
   },
 });
 
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
+
 const App = () => (
   <Router>
     <MuiThemeProvider theme={theme}>
@@ -31,11 +33,30 @@ const App = () => (
         <SideBar />
         <Switch>
           <Redirect exact from="/" to="/feed" />
-          <Route exact path="/feed" component={Feed} />
-          <Route exact path="/terms" component={Terms} />
-          <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/faq" component={FAQ} />
-          <Route exact path="/manageconsent" component={ManageConsent} />
+          <Route
+            exact
+            path="/feed"
+            render={() => {
+              scrollToTop();
+              return <Feed />;
+            }}
+          />
+          <Route
+            exact
+            path="/terms"
+            render={() => {
+              scrollToTop();
+              return <Terms />;
+            }}
+          />
+          <Route
+            exact
+            path="/privacy"
+            render={() => {
+              scrollToTop();
+              return <Privacy />;
+            }}
+          />
         </Switch>
         <Footer />
       </div>
