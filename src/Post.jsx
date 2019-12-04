@@ -31,7 +31,7 @@ const Post = ({
             Photo by&nbsp;
             <a
               className="Post-credit"
-              href={link}
+              href={`${link}?utm_source=biblefeed&utm_medium=referral`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,7 +40,7 @@ const Post = ({
             &nbsp;on&nbsp;
             <a
               className="Post-credit"
-              href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"
+              href="https://unsplash.com/?utm_source=biblefeed&utm_medium=referral"
               target="_blank"
               rel="noopener noreferrer"
             >

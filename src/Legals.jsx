@@ -5,7 +5,7 @@ export const Terms = () => (
   <div className="Legals">
     <h1 className="Title">Terms</h1>
     <div>
-      <h2 className="Headline">1. Introduction</h2>
+      <h2 className="Headline">1. INTRODUCTION</h2>
       <p>
         BEFORE ACCESSING OR USING ANY PART OF THE SITE, YOU SHOULD CAREFULLY READ THESE
         TERMS. BY ACCESSING OR USING ANY PART OF THE SITE, REGISTERING AS A USER, DOWNLOADING OUR
@@ -88,11 +88,11 @@ export const Terms = () => (
         <a href="unsplash.com">UNSPLASH</a>
         , ARE SUBJECT TO THE&ensp;
         <a href="unsplash.com/license">UNSPLASH LICENSE</a>
-        AND LABELED AS SUCH. WE EXPLICITLY
+        &ensp;AND LABELED AS SUCH. WE EXPLICITLY
         STATE THAT NONE OF THESE IMAGES ARE SUBJECT TO OUR OWN COPYRIGHT. ALL BIBLE VERSES IN ALL
         AVAILABLE TRANSLATIONS ARE GENEROUSLY PROVIDED BY THE API OF&ensp;
         <a href="digitalbibleplatform.com">DIGITAL BIBLE PLATFORM</a>
-        AND ARE SUBJECT TO THE COPYRIGHT OF&ensp;
+        &ensp;AND ARE SUBJECT TO THE COPYRIGHT OF&ensp;
         <a href="faithcomesbyhearing.com">FAITH COMES BY HEARING</a>
         &ensp;AND THEIR RESPECTIVE PARTNERS. WE EXPLICITLY STATE THAT NONE OF THESE SCRIPTURES
         ARE SUBJECT TO OUR OWN COPYRIGHT. WE ARE NOT LIABLE FOR THE CONTENT, FORMAT AND QUALITY
