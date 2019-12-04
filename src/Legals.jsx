@@ -121,18 +121,10 @@ export const Privacy = () => (
     <div>
       <p>
         <strong>Last Modified:</strong>
-&nbsp;October 22, 2019
+        &nbsp;December 04, 2019
       </p>
       <p>
-        BibleFeed Ltd. is a media company. &nbsp;
-        Our mission is to inspire the world with values.
-      </p>
-      <p>
-        The services that link to this Privacy Policy provide inspirational texts for
-        different areas of human life.
-      </p>
-      <p>
-        When you use these services, you’ll share some information with us.
+        When you use BibleFeed services, you’ll share some information with us.
         We want to explain clearly what information we collect, why we collect it,
         how we use it, whom we share it with, and the controls we give you to access,
         update, and delete your information.
@@ -140,23 +132,10 @@ export const Privacy = () => (
       <p>
         That’s why we’ve written this Privacy Policy. We tried to write it in simple
         language with minimal legalese so it’s easy for you to understand. If you have
-        any questions about anything in our Privacy Policy, please&nbsp;
+        any questions about anything in our Privacy Policy, please
         contact us.
-.
       </p>
-      <h2 className="Headline">Information We Collect</h2>
-      <p>There are two basic categories of information we collect:</p>
-      <ul data-rte-list="default">
-        <li>
-          <p>Information we get when you use our services</p>
-        </li>
-        <li>
-          <p>Information we get from third parties</p>
-        </li>
-      </ul>
-      <p>Here’s how we collect your information.</p>
       <h2 className="Headline">How We Collect Information</h2>
-      <h3 className="Headline">Information We Get When You Use Our Services</h3>
       <p>
         When you use our services, we collect information about which services you use and
         how you use them. For example, we may know what section or post you are reading, when
@@ -174,26 +153,11 @@ export const Privacy = () => (
         When you use our services, we may collect information about your location.
       </p>
       <p>
-        <strong>Information Collected by Cookies and Other Technologies.</strong>
-        {' '}
-        We may use cookies and other technologies such as web beacons, web storage, and
-        unique advertising identifiers to collect information about your activity,
-        browser and device. We may use these technologies to collect information when
-        you interact with services we offer through one of our partners, such as advertising
-        and commerce features. Most web browsers are set to accept cookies by default.
-        It is up to you to move or reject browser cookies through the settings on your browser
-        or device. Removing or rejecting cookies may affect our service functionality
-        and availability.
-      </p>
-      <p>
         <strong>Log Information.</strong>
         {' '}
         We also collect log information when you use our services. For example:
       </p>
       <ul data-rte-list="default">
-        <li>
-          <p>Details about how you’ve used our services.</p>
-        </li>
         <li>
           <p>Device information, such as web browser type and language.</p>
         </li>
@@ -205,25 +169,6 @@ export const Privacy = () => (
         </li>
         <li>
           <p>IP address.</p>
-        </li>
-        <li>
-          <p>
-            Identifiers associated with cookies or other technologies that may
-            uniquely identify your device or browser.
-          </p>
-        </li>
-        <li>
-          <p>Pages you visited before or after visiting our website or using our service.</p>
-        </li>
-      </ul>
-      <h3 className="Headline">Information We Collect From Third Parties</h3>
-      <p>We may collect information from our affiliates and third parties. For example:</p>
-      <ul data-rte-list="default">
-        <li>
-          <p>
-            If you interact with one of our advertisers, they may share information with
-            us to help target or measure ad performance.
-          </p>
         </li>
       </ul>
       <h2 className="Headline">How We Use Information</h2>
@@ -237,12 +182,6 @@ export const Privacy = () => (
         </li>
         <li>
           <p>Monitor and analyze trends and usages of our products and services.</p>
-        </li>
-        <li>
-          <p>Personalize our services by showing you better and more relevant content.</p>
-        </li>
-        <li>
-          <p>Provide ad targeting and measurement to show relevant ads.</p>
         </li>
         <li>
           <p>Enhance and enforce the safety and security of our products and services.</p>
@@ -267,38 +206,15 @@ export const Privacy = () => (
         policies of every third-party service you visit or use, including those third parties
         you interact with through our services.
       </p>
-      <h2 className="Headline">Analytics and Advertising Services</h2>
-      <h3 className="Headline">Provided by Others</h3>
-      <p>
-        We may let other companies use cookies, web beacons, and similar technologies on our
-        services. These companies may collect information about how you use our services over
-        time, and combine it with similar information from other services and companies.
-        This information may be used to analyze and track data, determine the popularity of
-        certain content, and under your online activity, among other things.
-      </p>
-      <p>
-        Some companies may use information collected on our services to measure the
-        performance of ads and deliver more relevant ads, including on third-party
-        websites and apps.
-      </p>
-      <h3 className="Headline">Provided by Us</h3>
-      <p>
-        We may collect information about your activity on third-party services that use
-        cookies and other technologies provided by us. We use this information to improve
-        your user experience with our services and to improve your advertising services,
-        including measuring the performance of ads and showing you relevant ads. Visit our
-        Manage Consent page to learn more about advertising and how you can control the
-        information used to select the ads you see.
-      </p>
       <h2 className="Headline">How Long We Keep Your Information</h2>
       <p>
-        We store your information, the posts you upload, and the comments you upload for a
-        period of time. For example:
+        We store your information for a period of time.
       </p>
       <ul data-rte-list="default">
         <li>
           <p>
-            We store logging information for different lengths of time based on how precise it is.
+            We store usage, location and logging information for different lengths of time based
+            on how precise it is.
           </p>
         </li>
       </ul>
@@ -308,28 +224,10 @@ export const Privacy = () => (
         We may also need to retain certain information in backup for a limited period of time,
         or as required by law.
       </p>
-      <h2 className="Headline">Control over Your Information</h2>
-      <p>
-        Your privacy is very important to us. We want you to have full control over the information
-        you give us, the information we use, and the information we keep. These are the tools we
-        provide you to control your information:
-      </p>
-      <ul data-rte-list="default">
-        <li>
-          <p>
-            <strong>Removing Permissions.</strong>
-            {' '}
-            If you agree to let us use your information, you can change your mind at any time by
-            changing the settings on our Manage Consent page. If you remove permission, certain
-            services may be impacted and may lose functionality.
-          </p>
-        </li>
-      </ul>
-
       <h2 className="Headline">Users in the European Union and European Economic Area</h2>
       <p>
         If you’re a user in the European Union or European Economic Area, please note that
-        BibleFeed Ltd. is the data controller of your information. Here’s additional information
+        BibleFeed is the data controller of your information. Here’s additional information
         we would like you to know:
       </p>
       <h3 className="Headline">Bases For Using Your Information</h3>
@@ -345,8 +243,7 @@ export const Privacy = () => (
             {' '}
             We may use your information because we - or a third party - has a legitimate interest.
             For example, we need to use your information to provide, maintain and improve our
-            services. To keep the lights on at BibleFeed HQ, we may use this information to show
-            you relevant ads.
+            services.
           </p>
         </li>
         <li>
@@ -367,13 +264,6 @@ export const Privacy = () => (
           </p>
         </li>
       </ul>
-
-      <h3 className="Headline">Your Right To Object</h3>
-      <p>
-        You have the right to object to our use of your information. You can stop our use of
-        your information by disabling the feature altogether. You can do this on our
-        Manage Consent page.
-      </p>
 
       <h3 className="Headline">International Transfers</h3>
       <p>
