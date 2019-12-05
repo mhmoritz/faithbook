@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import TranslationSelector from './TranslationSelector';
 import LanguageSelector from './LanguageSelector';
 import { openSideBar } from './actions';
-import Logo from './logo.png';
+import Logo from './logo.svg';
 
 const styles = {
   mainBar: {
