@@ -1,0 +1,30 @@
+.StdLinkGroup{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  text-align: left;
+  margin-left: 25px;
+}
+
+.StdLinkText {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 5px;
+  color: Grey;
+}
+
+.Copyright {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-top: 3px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 5px;
+  color: Grey;
+  text-align: center;
+}
+
+.StdLinkText-Bottom{
+  padding-bottom: 40px;
+}

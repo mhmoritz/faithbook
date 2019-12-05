@@ -1,0 +1,34 @@
+.Feed {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.Spinner {
+  position: absolute;
+  top: 150px;
+  opacity: 0.5;
+}
+
+.ErrorBox {
+  position: absolute;
+  top: 150px;
+  width: 70%;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.ErrorSymbol {
+  margin: 20px auto 15px;
+}
+
+.ErrorMessage {
+  margin: 0 auto 25px;
+  color: #555555;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}

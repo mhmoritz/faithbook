@@ -1,0 +1,83 @@
+.Post {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+.Card {
+  position: relative;
+}
+
+.Image {
+  width: 100%;
+  display: block;
+}
+
+.Post-credit{
+  text-decoration: underline;
+  font-weight: normal;
+  font-style: italic;
+  color: dimgrey;
+  font-size: 14px;
+}
+
+.Overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.69);
+  overflow: hidden;
+}
+
+.Overlay-Text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 130%;
+  color: white;
+  padding: 10px;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.Overlay-Source {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  font-size: 14px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.Panel {
+  height: 40px;
+}
+.Panel-text {
+  margin-left: 5px;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.Breadcrumb {
+  position: absolute;
+  border-radius: 4px;
+  padding: 4px;
+  right: 10px;
+  color: white;
+  font-size: 14px;
+  transform: translate(3%,-9%);
+  background-color: #aaaaaadd;
+}
+
+.LazyLoad {
+  height: 500px;
+}
+
+.LazyLoad.is-visible {
+  height: auto;
+}
