@@ -21,6 +21,7 @@ const styles = {
   listItemText: {
     fontWeight: 500,
     fontSize: 15,
+    color: '#4d4d4d'
   },
   link: {
     textDecoration: 'none',
