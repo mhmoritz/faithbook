@@ -14,7 +14,7 @@
   display: block;
 }
 
-.Post-credit{
+.Post-credit {
   text-decoration: underline;
   font-weight: normal;
   font-style: italic;
@@ -36,7 +36,7 @@
   position: relative;
   top: 50%;
   left: 50%;
-  font-size: 130%;
+  font-size: 18px;
   color: white;
   padding: 10px;
   transform: translate(-50%,-50%);
@@ -80,4 +80,18 @@
 
 .LazyLoad.is-visible {
   height: auto;
+}
+
+/* Media Query Breakpoint for Smartphones in Portrait Mode (375px+)*/
+@media only screen and (min-width: 23.4375em) {
+  .Overlay-Text {
+    font-size: 20px;
+  }
+}
+
+/* Media Query Breakpoint for Tablets in Portrait Mode (768px+)*/
+@media only screen and (min-width: 48em) {
+  .Overlay-Text {
+    font-size: 22px;
+  }
 }
