@@ -88,10 +88,3 @@
     font-size: 20px;
   }
 }
-
-/* Media Query Breakpoint for Tablets in Portrait Mode (768px+)*/
-@media only screen and (min-width: 48em) {
-  .Overlay-Text {
-    font-size: 22px;
-  }
-}
