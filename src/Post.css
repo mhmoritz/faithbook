@@ -18,7 +18,7 @@
   text-decoration: underline;
   font-weight: normal;
   font-style: italic;
-  color: #4d4d4d;
+  color: dimgrey;
   font-size: 14px;
 }
 
@@ -61,7 +61,7 @@
   margin-left: 5px;
   font-style: italic;
   font-size: 14px;
-  color: #4d4d4d;
+  color: '#4d4d4d';
 }
 
 .Breadcrumb {
