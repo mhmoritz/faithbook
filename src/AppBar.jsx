@@ -27,7 +27,7 @@ const styles = {
     marginRight: 20,
   },
   button: {
-    color: '#000000',
+    color: '#4d4d4d',
   },
   inputFocused: {
     background: '$labelcolor',
