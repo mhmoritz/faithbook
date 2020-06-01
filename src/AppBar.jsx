@@ -24,7 +24,7 @@ const styles = {
   },
   menuButton: {
     marginLeft: 0,
-    marginRight: 20,
+    marginRight: 10,
   },
   button: {
     color: '#4d4d4d',
@@ -34,8 +34,8 @@ const styles = {
     marginRight: 100,
   },
   logoImage: {
-    width: '85px',
-    height: 'auto',
+    height: '20px',
+    maxWidth: '85px',
     opacity: 0.8,
   },
   toolBar: {
