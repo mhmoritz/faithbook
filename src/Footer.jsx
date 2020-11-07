@@ -13,7 +13,7 @@ const Footer = () => (
       {' '}
       &ensp;
     </span>
-    <span className="StdLinkText">BibleFeed &#169; 2019</span>
+    <span className="StdLinkText">BibleFeed &#169; 2020</span>
   </div>
 );
 export default Footer;

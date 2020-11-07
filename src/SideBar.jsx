@@ -21,9 +21,15 @@ const styles = {
   listItemText: {
     fontWeight: 500,
     fontSize: 15,
+    color: 'grey'
+  },
+  listActiveText: {
+    fontWeight: 500,
+    fontSize: 15,
+    color: '#4d4d4d'
   },
   link: {
-    textDecoration: 'none',
+    textDecoration: 'none'
   },
   circle: {
     background: '#f00',
@@ -47,7 +53,7 @@ const SideBar = ({
             style={{ visibility: active ? 'visible' : 'hidden' }}
           />
           <ListItemText
-            classes={{ primary: classes.listItemText }}
+            classes={{ primary: active ? classes.listActiveText : classes.listItemText}}
             className={classes.sideListDynamicElement}
             primary={titles[key]}
           />
@@ -68,7 +74,7 @@ const SideBar = ({
         <NavLink to="/privacy" className="StdLinkText"> Privacy </NavLink>
         {' '}
         <br />
-        <s className="StdLinkText">BibleFeed &#169; 2019</s>
+        <s className="StdLinkText">BibleFeed &#169; 2020</s>
       </div>
       <Divider />
     </Drawer>

@@ -26,31 +26,31 @@ const Post = ({
         </div>
       </CardActionArea>
       <CardActions className="Panel">
-        <div>
-          <span className="Panel-text">
-            Photo by&nbsp;
-            <a
-              className="Post-credit"
-              href={`${link}?utm_source=biblefeed&utm_medium=referral`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {author}
-            </a>
-            &nbsp;on&nbsp;
-            <a
-              className="Post-credit"
-              href="https://unsplash.com/?utm_source=biblefeed&utm_medium=referral"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {'Unsplash'}
-            </a>
-          </span>
-          <span className="Breadcrumb">
-            {category}
-          </span>
+        <div className="Panel-text Shrink">
+          <div className="Left">Photo by&nbsp;</div>
+          <div
+            className="Post-credit Right"
+            href="https://unsplash.com/?utm_source=biblefeed&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Unsplash
+          </div>
+          <div className="Right">&nbsp;on&nbsp;</div>
+          <div
+            className="Post-credit Shrink"
+            href={`${link}?utm_source=biblefeed&utm_medium=referral`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {author}
+          </div>
         </div>
+        <div className="Filler">
+          <div className="Breadcrumb">
+            {category}
+          </div>
+      </div>
       </CardActions>
     </Card>
   </div>
