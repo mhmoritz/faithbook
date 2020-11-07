@@ -74,7 +74,7 @@ const SideBar = ({
         <NavLink to="/privacy" className="StdLinkText"> Privacy </NavLink>
         {' '}
         <br />
-        <s className="StdLinkText">BibleFeed &#169; 2019</s>
+        <s className="StdLinkText">BibleFeed &#169; 2020</s>
       </div>
       <Divider />
     </Drawer>

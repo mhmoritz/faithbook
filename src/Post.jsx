@@ -34,7 +34,7 @@ const Post = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            'Unsplash'
+            Unsplash
           </div>
           <div className="Right">&nbsp;on&nbsp;</div>
           <div
