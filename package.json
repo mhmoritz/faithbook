@@ -43,6 +43,7 @@
     "test": "react-scripts test",
     "lint": "eslint --ext .js --ext .jsx src",
     "lint-fix": "eslint --ext .js --ext .jsx --fix src",
+    "deploy": "aws s3 sync build/ s3://biblefeed-test-v0.1.0 --acl public-read",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -50,7 +50,7 @@ const Post = ({
           <div className="Breadcrumb">
             {category}
           </div>
-      </div>
+        </div>
       </CardActions>
     </Card>
   </div>
